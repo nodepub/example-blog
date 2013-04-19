@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  RewriteEngine On
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Route non-existing paths to NodePub app
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !(js|css|png|jpg|gif|ico)$
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
