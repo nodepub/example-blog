@@ -11,6 +11,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/nodepub/BlogEngine"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/nodepub/ThemeEngine"
         }
     ],
     "require": {
@@ -19,6 +23,7 @@
         "silex/silex": "1.0.*@dev",
         "twig/twig": ">=1.10,<2.0-dev",
         "symfony/twig-bridge": "~2.1",
-        "nodepub/blog-engine": "*"
+        "nodepub/blog-engine": "*",
+        "nodepub/theme-engine": "*"
     }
 }
