@@ -5,10 +5,14 @@
 
 $loader = require_once __DIR__.'/bootstrap.php';
 
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Exception\IOException;
+
 $app = new Silex\Application();
 
 $app['debug'] = true;
 
+$app['config_dir'] = __DIR__.'/_config';
 
 # ===================================================== #
 #    SERVICE PROVIDERS                                  #
@@ -16,6 +20,7 @@ $app['debug'] = true;
 
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
+$app->register(new Silex\Provider\FormServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.options'    => array(
@@ -64,29 +69,9 @@ $app->register(new NodePub\BlogEngine\Provider\BlogServiceProvider(), array(
 # ===================================================== #
 
 $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
-    'np.theme.paths' => realpath(__DIR__.'/../web/themes')
+    'np.theme.paths' => realpath(__DIR__.'/../web/themes'),
+    'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml'
 ));
-
-// This is temporary, need a way to abstract customized theme settings
-// so that they could be coming from anywhere - db, static files, etc.
-// We shouldn't care where they are coming from at this point,
-// but we may want to create a default way to add custom settings
-$app['np.theme.settings'] = $app->share(function($app) {
-    return array(
-        'default' => array(
-            'header_bg_color' => '#1D96D7'
-        ),
-
-        // these are future theme ideas:
-        'metropolis' => array(),
-        'gotham' => array(),
-        'carbide' => array(),
-        'leaf' => array(),
-        'grape-sode' => array()
-    );
-});
-
-$app['np.theme.custom_settings'] = $app['np.theme.settings'][$app['np.theme.active']];
 
 # ===================================================== #
 #    ROUTES                                             #
