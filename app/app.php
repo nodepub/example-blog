@@ -23,8 +23,15 @@ $app['site'] = $app->share(function() {
         'description' => 'This is a demo site for NodePub Blog Engine',
         'url'         => 'http://nodepub.com',
         'ga_code'     => '12345',
-        'theme'       => 'sumatra'
+        'theme'       => 'ethergraphics'
     );
+});
+
+$app['active_theme'] = $app->share(function($app) {
+    // if ($theme = $app['session']->get('theme_preview')) {
+    //     return $theme;
+    // }
+    return $app['site']['theme'];
 });
 
 # ===================================================== #
@@ -66,14 +73,16 @@ $app->register(new NodePub\BlogEngine\Provider\BlogServiceProvider(), array(
 ));
 
 // Listen for theme activation and set the relevant blog templates
-$app['dispatcher']->addListener(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
+$app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
 
     // We may want some kind of registry or ThemeTemplateResolver object
     // that uses theme's configuration to map it's templates to common page types,
     // otherwise all themes have to use exact names,
     // and there's no way to share a template for different page types, or fallback on a parent theme
 
-    $name = $event->getTheme()->getNamespace();
+    $theme = $event->getTheme();
+
+    $name = $theme->getNamespace();
     $app['blog.frontpage.template']      = '@'.$name.'/blog_index.twig';
     $app['blog.permalink.template']      = '@'.$name.'/blog_post.twig';
     $app['blog.default.template']        = '@'.$name.'/blog_post.twig';
@@ -82,6 +91,15 @@ $app['dispatcher']->addListener(ThemeEvents::THEME_ACTIVATE, function(Event $eve
     $app['blog.archive.template']        = '@'.$name.'/blog_archive.twig';
 
     $app['np.theme.templates.custom_css'] = '@'.$name.'/_styles.css.twig';
+
+    $app['np.admin.template'] = '@'.$name.'/layout.twig';
+
+    // set active theme's parent
+    if ($parentName = $theme->getParentNamespace()) {
+        if ($parent = $app['np.theme.manager']->getTheme($parentName)) {
+            $theme->setParent($parent);
+        }
+    }
 });
 
 # ===================================================== #
@@ -92,7 +110,7 @@ $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
     'np.theme.paths' => realpath(__DIR__.'/../web/themes'),
     'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml', // where settings are saved
     'np.theme.mount_point' => $app['np.admin_mount_point'].'/themes',
-    'np.theme.active' => $app['site']['theme'],
+    'np.theme.active' => $app['active_theme'],
 ));
 
 // $app['np.theme.fontstack_provider'] = $app->share(function($app) {
