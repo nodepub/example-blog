@@ -12,7 +12,10 @@ $app = new Silex\Application();
 
 $app['debug'] = true;
 $app['config_dir'] = __DIR__.'/_config';
+$app['cache_dir'] = __DIR__.'/_cache';
+$app['log_dir'] = __DIR__.'/_logs';
 $app['np.admin_mount_point'] = '/np-admin';
+$app['web_dir'] = __DIR__.'/../web';
 
 // TODO: this is only a stub
 $app['site'] = $app->share(function() {
@@ -25,13 +28,6 @@ $app['site'] = $app->share(function() {
         'ga_code'     => '12345',
         'theme'       => 'ethergraphics'
     );
-});
-
-$app['active_theme'] = $app->share(function($app) {
-    // if ($theme = $app['session']->get('theme_preview')) {
-    //     return $theme;
-    // }
-    return $app['site']['theme'];
 });
 
 # ===================================================== #
@@ -48,6 +44,11 @@ $app->register(new Silex\Provider\FormServiceProvider(), array(
 
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'locale_fallback' => 'en',
+));
+
+$app->register(new Silex\Provider\MonologServiceProvider(), array(
+    'monolog.name' => 'np',
+    'monolog.logfile' => $app['log_dir'].'/dev.log',
 ));
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -77,7 +78,7 @@ $app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
 
     // We may want some kind of registry or ThemeTemplateResolver object
     // that uses theme's configuration to map it's templates to common page types,
-    // otherwise all themes have to use exact names,
+    // otherwise all themes have to use exact template names,
     // and there's no way to share a template for different page types, or fallback on a parent theme
 
     $theme = $event->getTheme();
@@ -100,6 +101,8 @@ $app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
             $theme->setParent($parent);
         }
     }
+
+    $theme->customize($app['np.theme.configuration_provider']->get($name));
 });
 
 # ===================================================== #
@@ -110,12 +113,14 @@ $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
     'np.theme.paths' => realpath(__DIR__.'/../web/themes'),
     'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml', // where settings are saved
     'np.theme.mount_point' => $app['np.admin_mount_point'].'/themes',
-    'np.theme.active' => $app['active_theme'],
+    'np.theme.default' => $app['site']['theme'],
+    'np.theme.minify_assets' => true
 ));
 
-// $app['np.theme.fontstack_provider'] = $app->share(function($app) {
-//     $fontStacks = Symfony\Component\Yaml\Yaml::parse($app['config_dir'].'/font_stacks.yml');
-// });
+$app['np.theme.fontstack_provider'] = $app->share(function($app) {
+    $fontStacks = Symfony\Component\Yaml\Yaml::parse($app['config_dir'].'/font_stacks.yml');
+    return $fontStacks;
+});
 
 # ===================================================== #
 #    ROUTES                                             #

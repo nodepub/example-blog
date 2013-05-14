@@ -1,6 +1,6 @@
 {
     "name": "nodepub/example-blog",
-    "description": "A small example implementation of NodePub BlogEngine",
+    "description": "A small example implementation of NodePub themable blog engine",
     "keywords": ["silex", "twig", "blog"],
     "license": "MIT",
     "authors": [
@@ -22,10 +22,12 @@
         "dflydev/markdown": "1.0.*",
         "silex/silex": "1.0.*@dev",
         "twig/twig": ">=1.10,<2.0-dev",
-        "symfony/twig-bridge": "~2.1",
-        "symfony/form": "~2.1.4",
-        "symfony/locale": "~2.1",
-        "symfony/translation": "~2.1",
+        "symfony/twig-bridge": "~2.3",
+        "symfony/filesystem": "~2.3",
+        "symfony/form": "~2.3",
+        "symfony/locale": "~2.3",
+        "symfony/translation": "~2.3",
+        "monolog/monolog": ">=1.0.0",
         "nodepub/blog-engine": "*",
         "nodepub/theme-engine": "*"
     }
