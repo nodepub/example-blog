@@ -1,4 +1,4 @@
 vendor/*
-*/logs/*
-*/cache/*
+*/_logs/*
+*/_cache/*
 web/themes/*

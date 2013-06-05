@@ -14,7 +14,6 @@ $app['debug'] = true;
 $app['config_dir'] = __DIR__.'/_config';
 $app['cache_dir'] = __DIR__.'/_cache';
 $app['log_dir'] = __DIR__.'/_logs';
-$app['np.admin_mount_point'] = '/np-admin';
 $app['web_dir'] = __DIR__.'/../web';
 
 // TODO: this is only a stub
@@ -27,6 +26,12 @@ $app['site'] = $app->share(function() {
         'url'         => 'http://nodepub.com',
         'ga_code'     => '12345',
         'theme'       => 'ethergraphics'
+    );
+});
+
+$app['mocks'] = $app->share(function() {
+    return array(
+        'toolbar'        => array('themes','blog')
     );
 });
 
@@ -61,6 +66,22 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app['twig']->addGlobal('site', $app['site']);
 
 # ===================================================== #
+#    NP CONFIG                                          #
+# ===================================================== #
+
+$app->register(new NodePub\Core\Provider\ExtensionServiceProvider());
+$app->register(new NodePub\Core\Provider\AdminDashboardServiceProvider());
+
+// temp override - this is set if logged in as admin in AdminDashboardServiceProvider
+$app['np.admin'] = true;
+
+$app['np.extensions'] = $app->share($app->extend('np.extensions', function($extensions, $app) {
+    $extensions[]= new NodePub\Core\Extension\CoreExtension($app);
+    $extensions[]= new NodePub\Core\Extension\BlogEngineExtension($app);
+    return $extensions;
+}));
+
+# ===================================================== #
 #    BLOG CONFIG                                        #
 # ===================================================== #
 
@@ -71,6 +92,10 @@ $app->register(new NodePub\BlogEngine\Provider\BlogServiceProvider(), array(
     // these are internal templates, move to provider
     'blog.index.template' => 'post_index.twig',
     'blog.post.template' => 'post.twig',
+));
+
+$app->register(new NodePub\Core\Provider\BlogAdminServiceProvider(), array(
+    'np.blog_admin.drafts_dir' => __DIR__.'/../drafts'
 ));
 
 // Listen for theme activation and set the relevant blog templates
@@ -93,7 +118,10 @@ $app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
 
     $app['np.theme.templates.custom_css'] = '@'.$name.'/_styles.css.twig';
 
-    $app['np.admin.template'] = '@'.$name.'/layout.twig';
+    // for standalone usage, use the theme layout
+    // $app['np.admin.template'] = '@'.$name.'/layout.twig';
+    // for full np app use panel
+    $app['np.admin.template'] = '@np-admin/panel.twig';
 
     // set active theme's parent
     if ($parentName = $theme->getParentNamespace()) {
@@ -112,7 +140,7 @@ $app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
 $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
     'np.theme.paths' => realpath(__DIR__.'/../web/themes'),
     'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml', // where settings are saved
-    'np.theme.mount_point' => $app['np.admin_mount_point'].'/themes',
+    'np.theme.mount_point' => $app['np.admin.mount_point'].'/themes',
     'np.theme.default' => $app['site']['theme'],
     'np.theme.minify_assets' => true
 ));
