@@ -1,0 +1,36 @@
+<section class="recent_posts">
+    {% block recent_posts %}
+    <h3>Recent Posts</h3>
+    <ul>
+    {% for post in blog_recent_posts(5) %}
+        <li><a href="{{ blog_permalink(post) }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <p class="more_link">
+        <a href="{{ path('blog_get_posts') }}" class="more">more posts</a>
+    </p>
+    {% endblock %}
+</section>
+
+<section class="tags">
+    <h3>{% block tag_index_heading %}Tags{% endblock %}</h3>
+    {% block tag_index %}
+    <ul>
+        {% for tag in blog_tags() %}
+            {% if tag.count > 1 %}
+                <li>
+                    <a href="{{ path('blog_get_tag_index', {tag: tag.slug}) }}">{{ tag.name }}
+                        <span class="tag_count">({{ tag.count }})</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</section>
+
+<section class="twitter">
+    {% block twitter %}{% endblock %}
+</section>
+
+{% block sidebar_more %}{% endblock %}

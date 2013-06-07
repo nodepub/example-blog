@@ -1,0 +1,16 @@
+{% extends '@960base/layout.twig' %}
+
+{% block body %}
+    <div id="content" class="content grid_8 suffix_1 alpha" role="main">
+        {% block page_title %}{{ parent() }}{% endblock %}
+        {% block main %}{% endblock %}
+    </div>
+    <div id="sidebar" class="sidebar grid_3 omega">
+        <aside class="sidebar">
+            {% block sidebar %}
+                <h3>Archive</h3>
+                {% include '@960base/_archive.twig' %}
+            {% endblock %}
+        </aside>
+    </div>
+{% endblock %}

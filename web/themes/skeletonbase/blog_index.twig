@@ -1,0 +1,15 @@
+{% extends '@default/layout_sidebar.twig' %}
+
+{% block page_title %}
+    {% if tag is defined %}
+        <header>
+            <h1 class="page_title">Posts tagged with: <span class="tag_name">{{ tag }}</span></h1>
+        </header>
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    {% include app['blog.index.template'] with {'posts': posts} %}
+    {# this should become: #}
+    {# post_index(posts) #}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}Blocks{% endblock %}
+
+{% block content %}
+
+    {% for block in blocks %}
+
+        <div class="np_block">
+
+            <span style="float: right; margin-top: 4px;">
+                {% if block.readme is defined %}
+                    <a href="{{ path('admin_block_install', { blockNamespace: block.namespace }) }}" class="btn btn-mini btn-primary" type="button" >Install</a>
+                {% endif %}
+
+                {% if block.readme is defined %}
+                    <a data-target="#myModal" href="{# path('readme', { block: block.namespace }) #}" class="btn btn-mini"
+                       type="button" data-toggle="modal" >View Readme</a>
+                {% endif %}
+
+                {% if block.config_writable %}
+                    <a href="{# path('fileedit', { 'file': "app/blocks/" ~ block.config } ) #}" class="btn btn-mini"
+                       type="button">Edit Config</a>
+                {% else %}
+                    <a class="btn btn-mini disabled" type="button">Config not writable</a>
+                {% endif %}
+            </span>
+
+            <h3>{{ block.name }}</h3>
+
+            <p>{{ block.description }}</p>
+
+            <p>Author: <strong>{{ block.author }}</strong>, released: {{ block.first_releasedate|date("Y-m-d") }},
+                latest update: {{ block.latest_releasedate|date("Y-m-d") }} </p>
+
+            <span class="label">Name: {{ block.namespace }}</span>
+            {% if block.version %}<span class="label">Version {{ block.version }}</span>{% endif %}
+            {% if block.required_np_version %}<span class="label {% if not block.version_ok %}label-important{% endif %}"
+                title="{% if block.highest_np_version %}Tested in NodePub {{ block.highest_np_version }}.{% endif %}"
+                >Req. NodePub {{ block.required_np_version }}</span>{% endif %}
+
+        </div>
+    {% endfor %}
+{% endblock %}

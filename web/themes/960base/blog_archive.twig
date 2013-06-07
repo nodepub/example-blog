@@ -1,0 +1,22 @@
+{% extends '@960base/layout_sidebar.twig' %}
+
+{% block page_title %}
+    <header>
+        <h1 class="page_title">Archive</h1>
+    </header>
+{% endblock %}
+
+{% block main %}
+    {% for year, months in archive %}
+        {% for month, posts in months %}
+            {% for post in posts %}
+                {% if loop.first %}
+                    <h2><a href="{{ path('blog_get_month_index', {'year': post.year, 'month': post.month}) }}">{{ post.timestamp|date('M Y') }}</h2>
+                    <ul>
+                {% endif %}
+                <li><a href="{{ blog_permalink(post) }}">{{ post.title }}</a></li>
+                {% if loop.last %}</ul>{% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

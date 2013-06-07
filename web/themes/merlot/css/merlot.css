@@ -1,0 +1,42 @@
+#hd {
+    margin-bottom: 40px;
+}
+
+#site_name {
+    font-size: 35px;
+    margin-bottom: 0;
+}
+
+#site_name a {
+    text-decoration: none;
+}
+
+#site_tagline {
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+#ft {
+    padding-top: 20px;
+}
+
+.post {
+    margin-bottom: 80px;
+}
+
+.post_title {
+    margin-bottom: 0;
+}
+
+.blog_permalink {
+    color: #888;
+    text-decoration: none;
+}
+
+.post_date, .post_footer p {
+    font-size: 13px;
+}
+
+p {
+    font-size: 16px;
+}

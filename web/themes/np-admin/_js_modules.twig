@@ -1,0 +1,22 @@
+{# Loads configured require.js modules.
+ #}
+<script src="/themes/np-admin/js/require.js"></script>
+
+<script>
+    requirejs.config({
+        baseUrl: '/themes/np-admin/js/lib',
+        shim: {
+            "spectrum": ["jquery"],
+            "underscore": {
+                exports: '_'
+            }
+        },
+        paths: {
+            np: '/themes/np-admin/js/np'
+        }
+    });
+
+    //requirejs([{{ js_modules|join(',') }}]);
+
+    requirejs(['np/toolbar', 'np/panel']);
+</script>

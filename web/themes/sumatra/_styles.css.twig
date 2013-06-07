@@ -1,0 +1,48 @@
+{# If you have saved custom theme settings,
+   this block will be inserted into the theme layout
+   to override the theme defaults #}
+<style>
+    body {
+        background-color: {{ footer_bg_color }};
+        font-family: {{ body_font }};
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: {{ heading_font_color }};
+        font-family: {{ heading_font }};
+    }
+
+    #hd {
+        background-color: {{ header_bg_color }};
+        color: {{ header_font_color }};
+    }
+
+    #hd a {
+        color: {{ header_font_color }};
+    }
+
+    #site_name a {
+        color: {{ header_logo_color }};
+    }
+
+    #site_tagline {
+        color: {{ header_logo_color }};
+    }
+
+    #bd {
+        background-color: {{ body_bg_color }};
+    }
+
+    #ft {
+        background-color: {{ footer_bg_color }};
+        color: {{ footer_font_color }};
+    }
+
+    a {
+        color: {{ link_color }};
+    }
+
+    a:hover {
+        color: {{ link_hover_color }};
+    }
+</style>

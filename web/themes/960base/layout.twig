@@ -1,0 +1,91 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>{% block title %}{{ site.title }}{% endblock %}</title>
+
+    {% block ascii %}{% endblock %}
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{% block meta_description %}{{ site.description }}{% endblock %}">
+    {% block meta %}{% endblock %}
+    
+    <!-- css -->
+    {{ theme_styles() }}
+
+    <!-- javascript -->
+    {% if site.typekit is defined %}
+        <script src="//use.typekit.net/{{ site.typekit }}.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+    {% endif %}
+    <script src="/js/modernizr-2.0.6.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- icons -->
+    {% block icons %}<link rel="icon" href="/assets/images/ui/favicon.png">{% endblock %}
+</head>
+<body class="{# TODO: import from doozer layout #}">
+
+    {# Each layout section has a block for its container,
+       so that you can override or completely remove it from inherited templates #}
+    {% block header_container %}
+        <header id="hd">
+            <div id="hd_inner" class="container_12">
+                {# This 'header' block can be overridden in inherited templates in order
+                   to change columns and/or content while keeping the containing div in place #}
+                {% block header %}
+                    <div class="grid-12 alpha omega">
+                        <h1 id="site_name"><a href="/">{{ site.name }}</a></h1>
+                        <h2 id="site_tagline">{{ site.tagline }}</h2>
+                        <nav id="main_menu">
+                            {% block main_menu %}{% endblock %}
+                        </nav>
+                    </div>
+                {% endblock %}
+            </div>
+            <div class="clear"></div>
+        </header>
+    {% endblock %}
+    
+    {% block body_container %}
+        <div id="bd">
+            <div id="bd_inner" class="container_12">
+                {% block body %}
+                    <div id="main" role="main">
+                        {% block page_title %}{% endblock %}
+                        {% block main %}{% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+            <div class="clear"></div>
+        </div>
+    {% endblock %}
+
+    {% block footer_container %}
+        <footer id="ft">
+            <div id="ft_inner" class="container_12">
+                {% block footer %}
+                    <div>
+                        <p>Powered by <a href="http://nodepub.com">NodePub</a>.</p>
+                    </div>
+                {% endblock %}
+            </div>
+        </footer>
+    {% endblock %}
+    
+    <!-- javascript -->
+    {% block javascripts %}
+        {% include '@default/_google_analytics.twig' %}
+        {% include '@default/_jquery.twig' %}
+        {{ theme_javascripts() }}
+    {% endblock %}
+</body>
+</html>

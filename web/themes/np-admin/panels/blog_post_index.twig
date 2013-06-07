@@ -1,0 +1,30 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}<a href="{{ path('admin_blog') }}">Blog</a> <i class="icon-chevron-right"></i> {{ list_type }}{% endblock %}
+
+{% block panel_class %}np_blog_post_edit{% endblock %}
+
+{% block content %}
+    <h2>{{ list_type }}</h2>
+
+    <ul class="unstyled np_post_list">
+        {% for post in posts %}
+            <li><a href="{{ path('admin_blog_edit_post', {post: post.id}) }}">{{ post.title }}</a></li>
+        {% else %}
+            <li>No posts.</li>
+        {% endfor %}
+    </ul>
+
+    {% if page_count > 1 %}
+        <div class="pagination pagination-mini">
+            <ul>
+                {% for page in 1..page_count %}
+                    <li{% if page == page_number %} class="active"{% endif %}>
+                        <a href="{{ path('admin_blog_posts', {page: page}) }}">{{ page }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+{% endblock %}

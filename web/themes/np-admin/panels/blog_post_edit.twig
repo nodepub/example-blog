@@ -1,0 +1,12 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}<a href="{{ path('admin_blog') }}">Blog</a> <i class="icon-chevron-right"></i> {{ post.title }}{% endblock %}
+
+{% block content %}
+    <a href="#" class="np_icon_fullscreen -np_fullscreen"><i class="icon-fullscreen"></i></a>
+    <form action="{{ path('admin_blog_update_post', {post: post.id}) }}">
+        {{ form_widget(form) }}
+        <a href="{{ path('admin_blog') }}" class="btn">Cancel</a>
+        <input type="submit" name="Save" class="btn btn-primary" />
+    </form>
+{% endblock %}

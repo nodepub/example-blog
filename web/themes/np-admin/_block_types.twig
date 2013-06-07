@@ -1,0 +1,7 @@
+<script type="text/html" id="np_block_types_temp">
+    <ul class="nav nav-list">
+        {% for type in block_types %}
+            <li><a href="{{ path('admin_new_block', {namespace: type.namespace}) }}" data-panel="open">{{ type.name }}</a></li>
+        {% endfor %}
+    </ul>
+</script>

@@ -1,0 +1,51 @@
+<!-- START of Nodepub Toolbar -->
+<div id="np_admin">
+    <div id="np_toolbar_container">
+        <div id="np_toolbar">
+            <div id="np_icons" class="np_icons">
+                <ul>
+                    {% for item in toolbar %}
+                        <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open"><i class="icon-{{ item.icon }} icon-2x"></i>{{ item.name }}</a></li>
+                    {% endfor %}
+                    {% if toolbar|length > 4 %}
+                        <li class="more">
+                            <a href="{{ path('admin_settings') }}" data-panel="open"><i class="icon-ellipsis-horizontal icon-2x"></i>More</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div id="np_userbox">
+                <p>{{ username }}</p>
+                <ul id="np_usernav">
+                    <li><a href="{{ path('admin_user', {username: username }) }}">Account</a></li>
+                    <li><a href="{# path('admin_logout') #}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="np_panel_container" class="container hide"></div>
+    <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}"><i class="icon-caret-down icon-2x"></i></a>
+</div>
+{# see old version for how stylesheets and js are imported using a helper #}
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/themes/np-admin/css/np_main.css" />
+
+{% include '@np-admin/_js_modules.twig' %}
+
+{#
+{% include '@np-admin/_block_types.twig' %}
+{% include '@np-admin/_block_actions.twig' %}
+#}
+
+<script type="text/html" id="np_panel_loading_temp">
+    {% include '@np-admin/panel_loading.twig' %}
+</script>
+
+<script type="text/html" id="np_panel_flash_temp">
+    <div class="alert alert-<%= status %> -np_panel_flash">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= message %>
+    </div>
+</script>
+
+<!-- END of NodePub Toolbar -->

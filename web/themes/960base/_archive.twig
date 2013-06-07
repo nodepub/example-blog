@@ -1,0 +1,8 @@
+<ul>
+{% for year, months in blog_archive() %}
+    {% for month, posts in months %}
+        {% set monthFormat = posts.0.timestamp %}
+        <li><a href="{{ path('blog_get_month_index', {'year': year, 'month': month}) }}">{{ monthFormat|date('M') }} {{ year }}</a></li>
+    {% endfor %}
+{% endfor %}
+</ul>

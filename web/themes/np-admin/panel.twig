@@ -1,0 +1,22 @@
+<div id="np_panel" class="row{% block panel_class %}{% endblock %}">
+    <div class="np_panel_inner span10 offset1">
+        <header class="np_panel_head">
+            <div class="row">
+                <div class="span9">
+                    <h1>{% block nav %}{{ nav }}{% endblock %}</h1>
+                </div>
+                <div class="span1"><a href="#" data-close="panel" class="np_close_panel"><i class="icon-remove-sign"></i></a></div>
+            </div>
+        </header>
+
+        {{ include('@np-admin/_flash_messages.twig') }}
+
+        <div class="row">
+            <div class="span10 np_panel_content">
+                {% block row %}
+                    {% block content %}{{ content }}{% endblock %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>

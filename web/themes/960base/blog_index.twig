@@ -1,0 +1,13 @@
+{% extends '@960base/layout_sidebar.twig' %}
+
+{% block page_title %}
+    {% if tag is defined %}
+        <header>
+            <h1 class="page_title">Posts tagged with: <span class="tag_name">{{ tag }}</span></h1>
+        </header>
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    {% block blog_post_index %}{% endblock %}
+{% endblock %}

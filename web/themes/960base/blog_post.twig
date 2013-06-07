@@ -1,0 +1,12 @@
+{% extends '@960base/layout_sidebar.twig' %}
+
+{% block main %}
+    {% include app['blog.post.template'] with {'post': post} %}
+    {% block blog_post %}{% endblock %}
+{% endblock %}
+
+{% block sidebar %}
+    <h3>Recent Posts</h3>
+    {% include '@960base/_recent_posts.twig' %}
+    {{ parent() }}
+{% endblock %}

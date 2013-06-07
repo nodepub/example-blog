@@ -1,0 +1,32 @@
+name: Merlot
+description: A minimal theme with a clean finish and hints of citrus
+author: Andrew Gruner
+link: http://nodepub.com
+version: 0.1
+required_npub_version: 0.5
+highest_npub_version: 0.5
+first_releasedate: 2013-04-27
+latest_releasedate: 2013-04-27
+
+parent_theme: 960base
+
+stylesheets:
+  - merlot.css
+
+settings:
+  body_bg_color: '#ccc'
+  body_font: Calibri, Candara, Segoe, \"Segoe UI\", Optima, Arial, sans-serif
+  body_font_color: '#FFF'
+
+  header_logo_color: '#FFF'
+  header_font_color: '#F1E0D4'
+
+  footer_font_color: '#fff'
+
+  # General Typography
+
+  link_color: '#B5190E'
+  link_hover_color: '#B5190E'
+
+  heading_font: Cambria, Georgia, serif
+  highlight_color: '#181818'

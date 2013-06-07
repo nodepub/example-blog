@@ -1,0 +1,27 @@
+{% extends '@np-admin/split_panel.twig' %}
+
+{% block nav %}Sitemap{% endblock %}
+
+{% block column_1 %}
+    <ul>
+    {% for node in nodes %}
+        <li><a href="{{ path('admin_edit_node', {id: node.id}) }}">{{ node.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block column_2 %}
+    <h3>Node Types</h3>
+    <ul>
+    {% for type in node_types %}
+        <li><a href="#">{{ type.name }}</a></li>
+    {% endfor %}
+    </ul>
+    
+    <h3>Extensions</h3>
+    <ul>
+    {% for extension in extensions %}
+        <li><a href="#">{{ extension.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

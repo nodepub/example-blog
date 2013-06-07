@@ -1,0 +1,42 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}Stats{% endblock %}
+{% block content %}
+    <h2>Errors</h2>
+    <table>
+        <tr>
+            <th>Count</th>
+            <th>URI</th>
+            <th>Code</th>
+            <th>Message</th>
+            <th>Last Update</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.count }}</td>
+                <td>{{ event.context.request_uri }}</td>
+                <td>{{ event.context.error_code }}</td>
+                <td>{{ event.context.error_message }}</td>
+                <td>{{ event.datetime }}</td>
+                <td>raw <span class="hide"><code>{{ event.raw }}</code></span></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Top Requests</h2>
+    <table>
+        <tr>
+            <th>Count</th>
+            <th>URI</th>
+            <th>Last Update</th>
+        </tr>
+        {% for stat in stats %}
+            <tr>
+                <td>{{ stat.count }}</td>
+                <td>{{ stat.context.request_uri }}</td>
+                <td>{{ stat.datetime }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

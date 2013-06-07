@@ -1,0 +1,5 @@
+<ul>
+{% for post in blog_recent_posts(5) %}
+    <li><a href="{{ blog_permalink(post) }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
