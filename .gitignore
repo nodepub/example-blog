@@ -1,4 +1,8 @@
 vendor/*
 */_logs/*
 */_cache/*
-web/themes/*
+web/themes/*/.sass-cache/*
+drafts/*
+web/themes/ethergraphics/*
+web/themes/metropolis/*
+web/themes/divineflame/*
