@@ -11,7 +11,7 @@ use NodePub\ThemeEngine\ThemeEvents;
 $app = new Silex\Application();
 
 $app['debug'] = true;
-$app['config_dir'] = __DIR__.'/_config';
+$app['config_dir'] = __DIR__.'/config';
 $app['cache_dir'] = __DIR__.'/_cache';
 $app['log_dir'] = __DIR__.'/_logs';
 $app['web_dir'] = __DIR__.'/../web';
@@ -99,10 +99,11 @@ $app->register(new NodePub\Core\Provider\BlogAdminServiceProvider(), array(
 ));
 
 // Listen for theme activation and set the relevant blog templates
+// TODO: move this to core
 $app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
 
     // We may want some kind of registry or ThemeTemplateResolver object
-    // that uses theme's configuration to map it's templates to common page types,
+    // that uses theme's configuration to map its templates to common page types,
     // otherwise all themes have to use exact template names,
     // and there's no way to share a template for different page types, or fallback on a parent theme
 
@@ -142,7 +143,7 @@ $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
     'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml', // where settings are saved
     'np.theme.mount_point' => $app['np.admin.mount_point'].'/themes',
     'np.theme.default' => $app['site']['theme'],
-    'np.theme.minify_assets' => true
+    'np.theme.minify_assets' => false // need to fix file permission issues
 ));
 
 $app['np.theme.fontstack_provider'] = $app->share(function($app) {

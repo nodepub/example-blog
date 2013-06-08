@@ -1,0 +1,16 @@
+# Application Configuration
+# Rename this file to 'app.yml' and add your configuration settings.
+
+admin:
+  uri: /admin
+
+database:
+  driver: pdo_mysql
+  dbname: nodepub
+  user: root
+  password: ''
+  host: 127.0.0.1
+
+cache_age: 7200 # 2 hrs
+
+enabled_extensions: [HelloWorld, AsciiArt]

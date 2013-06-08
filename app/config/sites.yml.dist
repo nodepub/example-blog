@@ -1,0 +1,13 @@
+# Site Configuration
+# Rename this file to 'sites.yml' and add your site configuration.
+#
+# Example Format:
+
+nodepub.com:
+  name: NodePub
+  description: A CMS that WON’T kidnap and kill you.
+  title: NodePub
+  author: Gob Bluth
+  theme: default
+  ga_code: 123456
+  blog_path: /blog
