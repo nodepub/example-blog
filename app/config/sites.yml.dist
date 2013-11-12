@@ -1,5 +1,5 @@
 # Site Configuration
-# Rename this file to 'sites.yml' and add your site configuration.
+# Rename this file to 'sites.yml' and add your site configurations.
 #
 # Example Format:
 
@@ -8,6 +8,17 @@ nodepub.com:
   description: A CMS that WON’T kidnap and kill you.
   title: NodePub
   author: Gob Bluth
-  theme: default
+  theme: merlot
   ga_code: 123456
+  blog_path: /blog
+
+# Multiple sites can be configured
+
+saveourbluths.com:
+  name: Operation Hot Mother
+  description: I'm a monster
+  title: Operation Hot Mother
+  author: Buster Bluth
+  theme: sumatra
+  ga_code: 654321
   blog_path: /blog

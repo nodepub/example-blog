@@ -14,3 +14,5 @@ database:
 cache_age: 7200 # 2 hrs
 
 enabled_extensions: [HelloWorld, AsciiArt]
+
+form.secret: foo

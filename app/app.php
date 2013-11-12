@@ -11,10 +11,7 @@ use NodePub\ThemeEngine\ThemeEvents;
 $app = new Silex\Application();
 
 $app['debug'] = true;
-$app['config_dir'] = __DIR__.'/config';
-$app['cache_dir'] = __DIR__.'/_cache';
-$app['log_dir'] = __DIR__.'/_logs';
-$app['web_dir'] = __DIR__.'/../web';
+$app['app_dir'] = __DIR__;
 
 // TODO: this is only a stub
 $app['site'] = $app->share(function() {
@@ -29,55 +26,26 @@ $app['site'] = $app->share(function() {
     );
 });
 
-$app['mocks'] = $app->share(function() {
-    return array(
-        'toolbar'        => array('themes','blog')
-    );
+// These are yaml stubs for now
+$app['db'] = $app->share(function() {
 });
 
-# ===================================================== #
-#    SERVICE PROVIDERS                                  #
-# ===================================================== #
-
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-$app->register(new Silex\Provider\ServiceControllerServiceProvider());
-$app->register(new Silex\Provider\SessionServiceProvider());
-
-$app->register(new Silex\Provider\FormServiceProvider(), array(
-    'form.secret' => md5('I call the big one Bitey')
-));
-
-$app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallback' => 'en',
-));
-
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.name' => 'np',
-    'monolog.logfile' => $app['log_dir'].'/dev.log',
-));
-
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.options'    => array(
-        'autoescape' => false,
-        'cache' => false
-    )
-));
-
-$app['twig']->addGlobal('site', $app['site']);
+//$app['twig']->addGlobal('site', $app['site']);
 
 # ===================================================== #
 #    NP CONFIG                                          #
 # ===================================================== #
 
-$app->register(new NodePub\Core\Provider\ExtensionServiceProvider());
-$app->register(new NodePub\Core\Provider\AdminDashboardServiceProvider());
+$app->register(new NodePub\Core\Provider\CoreServiceProvider());
 
 // temp override - this is set if logged in as admin in AdminDashboardServiceProvider
 $app['np.admin'] = true;
 
+// register extensions - this will be configurable from the UI
 $app['np.extensions'] = $app->share($app->extend('np.extensions', function($extensions, $app) {
-    $extensions[]= new NodePub\Core\Extension\CoreExtension($app);
-    $extensions[]= new NodePub\Core\Extension\BlogEngineExtension($app);
+    $extensions->register(new NodePub\Core\Extension\CoreExtension($app));
+    $extensions->register(new NodePub\Core\Extension\ThemeEngineExtension($app));
+    $extensions->register(new NodePub\Core\Extension\BlogEngineExtension($app));
     return $extensions;
 }));
 
@@ -139,9 +107,7 @@ $app->on(ThemeEvents::THEME_ACTIVATE, function(Event $event) use ($app) {
 # ===================================================== #
 
 $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
-    'np.theme.paths' => realpath(__DIR__.'/../web/themes'),
-    'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml', // where settings are saved
-    'np.theme.mount_point' => $app['np.admin.mount_point'].'/themes',
+    //'np.theme.custom_settings_file' => $app['config_dir'].'/theme_settings.yml', // where settings are saved
     'np.theme.default' => $app['site']['theme'],
     'np.theme.minify_assets' => false // need to fix file permission issues
 ));
@@ -149,30 +115,6 @@ $app->register(new NodePub\ThemeEngine\Provider\ThemeServiceProvider(), array(
 $app['np.theme.fontstack_provider'] = $app->share(function($app) {
     $fontStacks = Symfony\Component\Yaml\Yaml::parse($app['config_dir'].'/font_stacks.yml');
     return $fontStacks;
-});
-
-# ===================================================== #
-#    ROUTES                                             #
-# ===================================================== #
-
-$app->get('/', function() use ($app) {
-    return $app->redirect($app['url_generator']->generate('blog_get_posts'));
-});
-
-$app->error(function (\Exception $e, $code) use ($app) {
-    if ($app['debug']) {
-        return;
-    }
-
-    switch ($code) {
-        case 404:
-            $message = 'The requested page could not be found.';
-            break;
-        default:
-            $message = 'We are sorry, but something went terribly wrong.';
-    }
-
-    return new Symfony\Component\HttpFoundation\Response($message);
 });
 
 return $app;

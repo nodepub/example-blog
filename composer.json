@@ -7,33 +7,8 @@
         {"name": "Andrew Gruner", "email": "andrew.gruner@gmail.com"}
     ],
     "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/nodepub/BlogEngine"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/nodepub/ThemeEngine"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/nodepub/Core"
-        }
-    ],
     "require": {
-        "php": ">=5.3.3",
-        "dflydev/markdown": "1.0.*",
-        "silex/silex": "1.0.*@dev",
-        "twig/twig": ">=1.10,<2.0-dev",
-        "symfony/twig-bridge": "~2.3",
-        "symfony/filesystem": "~2.3",
-        "symfony/form": "~2.3",
-        "symfony/locale": "~2.3",
-        "symfony/translation": "~2.3",
-        "monolog/monolog": ">=1.0.0",
         "nodepub/core": "*",
-        "nodepub/blog-engine": "*",
-        "nodepub/theme-engine": "*"
+        "nodepub/blog-engine": "*"
     }
 }

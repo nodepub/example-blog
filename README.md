@@ -5,7 +5,7 @@ NodePub
 
 This is a very early implementation of NodePub, a simple CMS and blogging platform built with Silex and Symfony Components.
 
-Core functionality is still being worked out.
+Core functionality is still in flux.
 
 ## Basics
 
