@@ -1,4 +1,4 @@
-<!-- START of Nodepub Toolbar -->
+<!-- START of NodePub Toolbar -->
 <div id="np_admin">
     <div id="np_toolbar_container">
         <div id="np_toolbar">
@@ -23,19 +23,20 @@
             </div>
         </div>
     </div>
-    <div id="np_panel_container" class="container np_hide"></div>
+    <div id="np_panel_container" class="container np_hide">{# ajax inserts panels here #}</div>
     <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}"><i class="fa fa-caret-down fa-2x"></i></a>
 </div>
-{# see old version for how stylesheets and js are imported using a helper #}
+
+{# TODO: see old version for how stylesheets and js are imported using a helper, or use theme config to output them #}
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" href="/themes/np-admin/css/np_admin.css" />
 
+{# import require.js and modules #}
 {% include '@np-admin/_js_modules.twig' %}
 
-{#
-{% include '@np-admin/_block_types.twig' %}
-{% include '@np-admin/_block_actions.twig' %}
-#}
+{#######################################
+    inline _underscore templates
+########################################}
 
 <script type="text/html" id="np_panel_loading_temp">
     {% include '@np-admin/panel_loading.twig' %}
@@ -47,5 +48,11 @@
         <%= message %>
     </div>
 </script>
+
+{# import templates for block editing #}
+{#
+{% include '@np-admin/_block_types.twig' %}
+{% include '@np-admin/_block_actions.twig' %}
+#}
 
 <!-- END of NodePub Toolbar -->

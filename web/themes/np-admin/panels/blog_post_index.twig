@@ -1,10 +1,10 @@
 {% extends '@np-admin/panel.twig' %}
 
-{% block nav %}<a href="{{ path('admin_blog') }}">Blog</a> <i class="icon-chevron-right"></i> {{ list_type }}{% endblock %}
+{% block panel_nav %}<a href="{{ path('admin_blog') }}">Blog</a> <i class="icon-chevron-right"></i> {{ list_type }}{% endblock %}
 
 {% block panel_class %}np_blog_post_edit{% endblock %}
 
-{% block content %}
+{% block panel_content %}
     <h2>{{ list_type }}</h2>
 
     <ul class="unstyled np_post_list">

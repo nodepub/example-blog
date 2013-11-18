@@ -1,9 +1,7 @@
 define(['jquery', 'np/events'], function($, events) {
 
     var enabledClass = 'np_enabled',
-        disabledClass = 'np_disabled',
-        iconEnabledClass = 'icon-caret-up',
-        iconDisabledClass = 'icon-caret-down'
+        disabledClass = 'np_disabled'
         ;
 
     var toolbar = {

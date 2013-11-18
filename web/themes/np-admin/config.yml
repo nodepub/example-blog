@@ -9,7 +9,7 @@ first_releasedate: 2013-05-24
 latest_releasedate: 2013-05-24
 
 stylesheets:
-  - //netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+  - //netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css
   - np_admin.css
 
 javascripts:

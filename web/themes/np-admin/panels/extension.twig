@@ -1,8 +1,8 @@
 {% extends '@np-admin/panel.twig' %}
 
-{% block nav %}<a href="{{ path('admin_extensions') }}">Extensions</a> <i class="icon-chevron-right"></i> {{ extension.name }}{% endblock %}
+{% block panel_nav %}<a href="{{ path('admin_extensions') }}">Extensions</a> <i class="icon-chevron-right"></i> {{ extension.name }}{% endblock %}
 
-{% block content %}
+{% block panel_content %}
     <p>Active?</p>
     <p>Core?</p>
     <h2>Toolbar Items</h2>

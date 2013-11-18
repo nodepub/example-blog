@@ -1,8 +1,8 @@
 {% extends '@np-admin/panel.twig' %}
 
-{% block nav %}<a href="{{ path('admin_blog') }}">Blog</a> <i class="icon-chevron-right"></i> {{ post.title }}{% endblock %}
+{% block panel_nav %}<a href="{{ path('admin_blog') }}">Blog</a> <i class="icon-chevron-right"></i> {{ post.title }}{% endblock %}
 
-{% block content %}
+{% block panel_content %}
     <a href="#" class="np_icon_fullscreen -np_fullscreen"><i class="icon-fullscreen"></i></a>
     <form action="{{ path('admin_blog_update_post', {post: post.id}) }}">
         {{ form_widget(form) }}

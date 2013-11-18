@@ -22,7 +22,483 @@ body.np_disabled {
   display: none;
 }
 
-/* line 7, ../sass/np_admin.sass */
+/* line 1, ../sass/np_admin/_toolbar.sass */
+#np_admin {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: -76px;
+  width: 100%;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* line 8, ../sass/np_admin/_toolbar.sass */
+#np_admin h1, #np_admin h2, #np_admin h3, #np_admin h4, #np_admin h5, #np_admin h6 {
+  text-transform: none;
+  color: #414141;
+}
+/* line 11, ../sass/np_admin/_toolbar.sass */
+#np_admin a {
+  color: #33cc33;
+  text-decoration: none;
+}
+/* line 14, ../sass/np_admin/_toolbar.sass */
+#np_admin a:hover {
+  text-decoration: none;
+  color: #55ee55;
+}
+
+/* line 18, ../sass/np_admin/_toolbar.sass */
+.np_enabled #np_admin {
+  top: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 22, ../sass/np_admin/_toolbar.sass */
+.np_disabled #np_admin {
+  top: -76px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 26, ../sass/np_admin/_toolbar.sass */
+#np_toolbar_container {
+  height: 75px;
+  width: 100%;
+  border-bottom: 1px solid #c1c1c1;
+  overflow: hidden;
+  background: #383838;
+  background: -moz-linear-gradient(top, #303030 1%, #404040 58%, #404040 85%, #303030 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #303030), color-stop(58%, #404040), color-stop(85%, #404040), color-stop(100%, #303030));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#303030',GradientType=0 );
+}
+
+/* line 36, ../sass/np_admin/_toolbar.sass */
+#np_toolbar {
+  color: #d6d6d6;
+  height: 75px;
+  width: 960px;
+  margin: 0 auto;
+}
+/* line 41, ../sass/np_admin/_toolbar.sass */
+#np_toolbar .np_icons {
+  padding-top: 20px;
+}
+
+/* line 46, ../sass/np_admin/_toolbar.sass */
+#np_admin .np_icons ul {
+  list-style: none;
+  margin: 0;
+}
+/* line 49, ../sass/np_admin/_toolbar.sass */
+#np_admin .np_icons li {
+  float: left;
+  margin: 0;
+}
+/* line 52, ../sass/np_admin/_toolbar.sass */
+#np_admin .np_icons a {
+  display: block;
+  color: #888888;
+  padding: 0 25px;
+  height: 40px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 58, ../sass/np_admin/_toolbar.sass */
+#np_admin .np_icons a:hover {
+  color: white;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 61, ../sass/np_admin/_toolbar.sass */
+#np_admin .np_icons a.active {
+  color: #66ff66;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 64, ../sass/np_admin/_toolbar.sass */
+#np_admin .np_icons i {
+  display: block;
+  text-align: center;
+  margin: 0;
+  width: auto;
+  padding: 0 0 10px 0;
+}
+
+/* line 71, ../sass/np_admin/_toolbar.sass */
+#np_userbox {
+  margin-top: 5px;
+}
+
+/* line 74, ../sass/np_admin/_toolbar.sass */
+#np_usernav {
+  list-style: none;
+  margin: 0;
+}
+/* line 77, ../sass/np_admin/_toolbar.sass */
+#np_usernav li {
+  float: left;
+}
+/* line 79, ../sass/np_admin/_toolbar.sass */
+#np_usernav a {
+  display: block;
+  color: #d6d6d6;
+  padding: 0 15px;
+}
+/* line 83, ../sass/np_admin/_toolbar.sass */
+#np_usernav a:hover {
+  color: white;
+}
+/* line 85, ../sass/np_admin/_toolbar.sass */
+#np_usernav li:first-child a {
+  border-right: 1px dotted white;
+  padding-left: 0;
+}
+
+/* line 1, ../sass/np_admin/_menu_toggle.sass */
+a#np_menu_toggle {
+  -moz-border-radius-bottomleft: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomright: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background: #414141;
+  padding: 4px 8px;
+  margin-left: 20px;
+  width: 20px;
+  display: block;
+  position: relative;
+  top: -1px;
+}
+/* line 10, ../sass/np_admin/_menu_toggle.sass */
+a#np_menu_toggle i {
+  height: 24px;
+  color: #66ff66;
+  display: block;
+}
+
+/* line 16, ../sass/np_admin/_menu_toggle.sass */
+.np_disabled a#np_menu_toggle i {
+  color: white;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 20, ../sass/np_admin/_menu_toggle.sass */
+.np_disabled a#np_menu_toggle:hover i {
+  color: #66ff66;
+}
+
+/* line 23, ../sass/np_admin/_menu_toggle.sass */
+.np_enabled a#np_menu_toggle {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+  margin: 0;
+}
+/* line 28, ../sass/np_admin/_menu_toggle.sass */
+.np_enabled a#np_menu_toggle i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  position: relative;
+  left: 4px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 2, ../sass/np_admin/_panel.sass */
+#np_panel .np_panel_inner {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  margin-top: 30px;
+  background: #eeeff0;
+  border: 5px solid #414141;
+}
+/* line 8, ../sass/np_admin/_panel.sass */
+#np_panel .np_panel_head {
+  background: #414141;
+}
+/* line 10, ../sass/np_admin/_panel.sass */
+#np_panel .np_panel_head h1 {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  padding-left: 20px;
+}
+/* line 15, ../sass/np_admin/_panel.sass */
+#np_panel .np_panel_head h1 a {
+  color: white;
+}
+/* line 18, ../sass/np_admin/_panel.sass */
+#np_panel a.np_close_panel {
+  color: white;
+  font-size: 1.5em;
+  padding-top: 6px;
+  padding-right: 14px;
+  display: block;
+  float: right;
+}
+/* line 25, ../sass/np_admin/_panel.sass */
+#np_panel a.np_close_panel:hover {
+  color: #66ff66;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 30, ../sass/np_admin/_panel.sass */
+#np_panel .np_panel_content {
+  padding: 20px;
+}
+/* line 33, ../sass/np_admin/_panel.sass */
+#np_panel .np_icons a {
+  color: #414141;
+  padding-top: 5px;
+  padding: 20px;
+}
+/* line 37, ../sass/np_admin/_panel.sass */
+#np_panel .np_icons a:hover {
+  color: #414141;
+  background-color: #99ff99;
+}
+/* line 41, ../sass/np_admin/_panel.sass */
+#np_panel form {
+  margin-bottom: 0;
+}
+/* line 44, ../sass/np_admin/_panel.sass */
+#np_panel textarea {
+  width: 100%;
+  width: 725px;
+  height: 350px;
+}
+
+/* line 3, ../sass/np_admin/_themes.sass */
+.np_theme_preview_thumb {
+  position: relative;
+  width: 272px;
+  height: 175px;
+}
+
+/* line 8, ../sass/np_admin/_themes.sass */
+.np_theme_info {
+  margin-bottom: 60px;
+}
+
+/* line 11, ../sass/np_admin/_themes.sass */
+.np_theme_info:last-child {
+  margin-bottom: 0;
+}
+
+/* line 14, ../sass/np_admin/_themes.sass */
+.np_theme_switcher {
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-top-left-radius: 7px;
+  border-top-left-radius: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  width: 150px;
+  height: 20px;
+  top: 20px;
+  right: -130px;
+  padding: 5px;
+  padding-left: 8px;
+  background: #414141;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 30, ../sass/np_admin/_themes.sass */
+.np_theme_switcher form > div, .np_theme_switcher form label:first-child span {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 34, ../sass/np_admin/_themes.sass */
+.np_theme_switcher label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+  color: white;
+}
+/* line 40, ../sass/np_admin/_themes.sass */
+.np_theme_switcher:hover {
+  right: 0;
+  height: 100px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 44, ../sass/np_admin/_themes.sass */
+.np_theme_switcher:hover form > div, .np_theme_switcher:hover form label:first-child span {
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 48, ../sass/np_admin/_themes.sass */
+.np_enabled .np_theme_switcher {
+  top: 95px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 2, ../sass/np_admin/_blocks.sass */
+.np_enabled .np_editable_block {
+  position: relative;
+}
+/* line 5, ../sass/np_admin/_blocks.sass */
+.np_enabled .np_mask {
+  border: 1px solid #66ff66;
+  background-color: rgba(102, 255, 102, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 11, ../sass/np_admin/_blocks.sass */
+.np_enabled .np_mask:hover {
+  background-color: rgba(102, 255, 102, 0.7);
+}
+/* line 14, ../sass/np_admin/_blocks.sass */
+.np_enabled .np_add_block {
+  background: #66ff66;
+  color: white;
+  height: 20px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* line 19, ../sass/np_admin/_blocks.sass */
+.np_enabled .np_add_block:hover {
+  background: #88ff88;
+}
+/* line 21, ../sass/np_admin/_blocks.sass */
+.np_enabled .np_add_block a {
+  color: white;
+}
+
+/* line 1, ../sass/np_admin/_login.sass */
+.np_login {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #999999;
+}
+/* line 4, ../sass/np_admin/_login.sass */
+.np_login form {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #666666;
+  border: 2px solid #333333;
+  color: #333333;
+  width: 500px;
+  margin: 200px auto 0;
+  padding: 0;
+}
+/* line 12, ../sass/np_admin/_login.sass */
+.np_login header {
+  background: #333333;
+  height: 120px;
+  position: relative;
+}
+/* line 16, ../sass/np_admin/_login.sass */
+.np_login h1 {
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  font-size: 18px;
+}
+/* line 23, ../sass/np_admin/_login.sass */
+.np_login #flash_msg {
+  background: #66ff66;
+  position: absolute;
+  bottom: 0;
+  padding: 8px 0;
+  width: 100%;
+  text-indent: 80px;
+}
+/* line 30, ../sass/np_admin/_login.sass */
+.np_login #flash_msg.err {
+  background-color: red;
+}
+/* line 32, ../sass/np_admin/_login.sass */
+.np_login .form_body {
+  padding: 20px 80px 50px;
+  position: relative;
+}
+/* line 35, ../sass/np_admin/_login.sass */
+.np_login label {
+  display: block;
+}
+/* line 37, ../sass/np_admin/_login.sass */
+.np_login input[type="text"],
+.np_login input[type="password"] {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 340px;
+  border: 1px solid #333333;
+  padding: 5px 0;
+}
+/* line 44, ../sass/np_admin/_login.sass */
+.np_login input[type="submit"] {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background: #66ff66;
+  border: 1px solid #333333;
+  color: white;
+  padding: 4px 10px;
+  position: absolute;
+  right: 80px;
+}
+
+/* line 13, ../sass/np_admin.sass */
 #np_admin {
   /* normalize.css v2.1.3 | MIT License | git.io/normalize */
   @-ms-viewport {
@@ -239,7 +715,7 @@ body.np_disabled {
   border-spacing: 0;
 }
 @media print {
-  /* line 7, ../sass/np_admin.sass */
+  /* line 13, ../sass/np_admin.sass */
   #np_admin {
     @page {
       margin: 2cm .5cm;
@@ -2042,9 +2518,7 @@ body.np_disabled {
   cursor: not-allowed;
 }
 /* line 848, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .input-sm, #np_admin .input-group-sm > .form-control,
-#np_admin .input-group-sm > .input-group-addon,
-#np_admin .input-group-sm > .input-group-btn > .btn {
+#np_admin .input-sm {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2052,22 +2526,16 @@ body.np_disabled {
   border-radius: 3px;
 }
 /* line 853, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin select.input-sm, #np_admin .input-group-sm > select.form-control,
-#np_admin .input-group-sm > select.input-group-addon,
-#np_admin .input-group-sm > .input-group-btn > select.btn {
+#np_admin select.input-sm {
   height: 30px;
   line-height: 30px;
 }
 /* line 858, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin textarea.input-sm, #np_admin .input-group-sm > textarea.form-control,
-#np_admin .input-group-sm > textarea.input-group-addon,
-#np_admin .input-group-sm > .input-group-btn > textarea.btn {
+#np_admin textarea.input-sm {
   height: auto;
 }
 /* line 848, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .input-lg, #np_admin .input-group-lg > .form-control,
-#np_admin .input-group-lg > .input-group-addon,
-#np_admin .input-group-lg > .input-group-btn > .btn {
+#np_admin .input-lg {
   height: 45px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2075,16 +2543,12 @@ body.np_disabled {
   border-radius: 6px;
 }
 /* line 853, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin select.input-lg, #np_admin .input-group-lg > select.form-control,
-#np_admin .input-group-lg > select.input-group-addon,
-#np_admin .input-group-lg > .input-group-btn > select.btn {
+#np_admin select.input-lg {
   height: 45px;
   line-height: 45px;
 }
 /* line 858, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin textarea.input-lg, #np_admin .input-group-lg > textarea.form-control,
-#np_admin .input-group-lg > textarea.input-group-addon,
-#np_admin .input-group-lg > .input-group-btn > textarea.btn {
+#np_admin textarea.input-lg {
   height: auto;
 }
 /* line 797, ../sass/vendor/bootstrap/_mixins.scss */
@@ -2181,28 +2645,26 @@ body.np_disabled {
 }
 @media (min-width: 768px) {
   /* line 300, ../sass/vendor/bootstrap/_forms.scss */
-  #np_admin .form-inline .form-group, #np_admin .navbar-form .form-group {
+  #np_admin .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
   /* line 307, ../sass/vendor/bootstrap/_forms.scss */
-  #np_admin .form-inline .form-control, #np_admin .navbar-form .form-control {
+  #np_admin .form-inline .form-control {
     display: inline-block;
   }
   /* line 315, ../sass/vendor/bootstrap/_forms.scss */
-  #np_admin .form-inline .radio, #np_admin .navbar-form .radio,
-  #np_admin .form-inline .checkbox,
-  #np_admin .navbar-form .checkbox {
+  #np_admin .form-inline .radio,
+  #np_admin .form-inline .checkbox {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
   }
   /* line 322, ../sass/vendor/bootstrap/_forms.scss */
-  #np_admin .form-inline .radio input[type="radio"], #np_admin .navbar-form .radio input[type="radio"],
-  #np_admin .form-inline .checkbox input[type="checkbox"],
-  #np_admin .navbar-form .checkbox input[type="checkbox"] {
+  #np_admin .form-inline .radio input[type="radio"],
+  #np_admin .form-inline .checkbox input[type="checkbox"] {
     float: none;
     margin-left: 0;
   }
@@ -2506,23 +2968,22 @@ body.np_disabled {
   text-decoration: none;
 }
 /* line 122, ../sass/vendor/bootstrap/_buttons.scss */
-#np_admin .btn-lg, #np_admin .btn-group-lg > .btn {
+#np_admin .btn-lg {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
 }
 /* line 127, ../sass/vendor/bootstrap/_buttons.scss */
-#np_admin .btn-sm, #np_admin .btn-group-sm > .btn,
-#np_admin .btn-xs,
-#np_admin .btn-group-xs > .btn {
+#np_admin .btn-sm,
+#np_admin .btn-xs {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
 /* line 131, ../sass/vendor/bootstrap/_buttons.scss */
-#np_admin .btn-xs, #np_admin .btn-group-xs > .btn {
+#np_admin .btn-xs {
   padding: 1px 5px;
 }
 /* line 139, ../sass/vendor/bootstrap/_buttons.scss */
@@ -2567,1098 +3028,6 @@ body.np_disabled {
   overflow: hidden;
   -webkit-transition: height 0.35s ease;
   transition: height 0.35s ease;
-}
-/* line 10, ../sass/vendor/bootstrap/_button-groups.scss */
-.btn-default #np_admin .caret {
-  border-top-color: #333333;
-}
-/* line 17, ../sass/vendor/bootstrap/_button-groups.scss */
-.btn-primary #np_admin .caret, .btn-success #np_admin .caret, .btn-warning #np_admin .caret, .btn-danger #np_admin .caret, .btn-info #np_admin .caret {
-  border-top-color: #fff;
-}
-/* line 22, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .dropup .btn-default .caret {
-  border-bottom-color: #333333;
-}
-/* line 30, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .dropup .btn-primary .caret,
-#np_admin .dropup .btn-success .caret,
-#np_admin .dropup .btn-warning .caret,
-#np_admin .dropup .btn-danger .caret,
-#np_admin .dropup .btn-info .caret {
-  border-bottom-color: #fff;
-}
-/* line 38, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group,
-#np_admin .btn-group-vertical {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-/* line 42, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn,
-#np_admin .btn-group-vertical > .btn {
-  position: relative;
-  float: left;
-}
-/* line 49, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn:hover, #np_admin .btn-group > .btn:focus, #np_admin .btn-group > .btn:active, #np_admin .btn-group > .btn.active,
-#np_admin .btn-group-vertical > .btn:hover,
-#np_admin .btn-group-vertical > .btn:focus,
-#np_admin .btn-group-vertical > .btn:active,
-#np_admin .btn-group-vertical > .btn.active {
-  z-index: 2;
-}
-/* line 52, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn:focus,
-#np_admin .btn-group-vertical > .btn:focus {
-  outline: none;
-}
-/* line 64, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group .btn + .btn,
-#np_admin .btn-group .btn + .btn-group,
-#np_admin .btn-group .btn-group + .btn,
-#np_admin .btn-group .btn-group + .btn-group {
-  margin-left: -1px;
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .btn-toolbar:before, #np_admin .btn-toolbar:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .btn-toolbar:after {
-  clear: both;
-}
-/* line 73, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-toolbar .btn-group {
-  float: left;
-}
-/* line 80, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-toolbar > .btn + .btn,
-#np_admin .btn-toolbar > .btn + .btn-group,
-#np_admin .btn-toolbar > .btn-group + .btn,
-#np_admin .btn-toolbar > .btn-group + .btn-group {
-  margin-left: 5px;
-}
-/* line 86, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
-}
-/* line 91, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn:first-child {
-  margin-left: 0;
-}
-/* line 93, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-/* line 99, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn:last-child:not(:first-child),
-#np_admin .btn-group > .dropdown-toggle:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 104, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn-group {
-  float: left;
-}
-/* line 107, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
-}
-/* line 112, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn-group:first-child > .btn:last-child,
-#np_admin .btn-group > .btn-group:first-child > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-/* line 116, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn-group:last-child > .btn:first-child {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 122, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group .dropdown-toggle:active,
-#np_admin .btn-group.open .dropdown-toggle {
-  outline: 0;
-}
-/* line 140, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn + .dropdown-toggle {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-/* line 144, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group > .btn-lg + .dropdown-toggle, #np_admin .btn-group-lg.btn-group > .btn + .dropdown-toggle {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-/* line 151, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group.open .dropdown-toggle {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-/* line 155, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group.open .dropdown-toggle.btn-link {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-/* line 162, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn .caret {
-  margin-left: 0;
-}
-/* line 166, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-lg .caret, #np_admin .btn-group-lg > .btn .caret {
-  border-width: 5px 5px 0;
-  border-bottom-width: 0;
-}
-/* line 171, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .dropup .btn-lg .caret, #np_admin .dropup .btn-group-lg > .btn .caret {
-  border-width: 0 5px 5px;
-}
-/* line 181, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn,
-#np_admin .btn-group-vertical > .btn-group {
-  display: block;
-  float: none;
-  width: 100%;
-  max-width: 100%;
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .btn-group-vertical > .btn-group:before, #np_admin .btn-group-vertical > .btn-group:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .btn-group-vertical > .btn-group:after {
-  clear: both;
-}
-/* line 191, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn-group > .btn {
-  float: none;
-}
-/* line 199, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn + .btn,
-#np_admin .btn-group-vertical > .btn + .btn-group,
-#np_admin .btn-group-vertical > .btn-group + .btn,
-#np_admin .btn-group-vertical > .btn-group + .btn-group {
-  margin-top: -1px;
-  margin-left: 0;
-}
-/* line 206, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
-  border-radius: 0;
-}
-/* line 209, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-/* line 213, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-bottom-left-radius: 4px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 218, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
-}
-/* line 223, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn-group:first-child > .btn:last-child,
-#np_admin .btn-group-vertical > .btn-group:first-child > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-/* line 227, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-vertical > .btn-group:last-child > .btn:first-child {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 236, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-justified {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-}
-/* line 241, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin .btn-group-justified .btn {
-  float: none;
-  display: table-cell;
-  width: 1%;
-}
-/* line 251, ../sass/vendor/bootstrap/_button-groups.scss */
-#np_admin [data-toggle="buttons"] > .btn > input[type="radio"],
-#np_admin [data-toggle="buttons"] > .btn > input[type="checkbox"] {
-  display: none;
-}
-/* line 7, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group {
-  position: relative;
-  display: table;
-  border-collapse: separate;
-}
-/* line 13, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group.col {
-  float: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-/* line 19, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group .form-control {
-  width: 100%;
-  margin-bottom: 0;
-}
-/* line 42, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon,
-#np_admin .input-group-btn,
-#np_admin .input-group .form-control {
-  display: table-cell;
-}
-/* line 45, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon:not(:first-child):not(:last-child),
-#np_admin .input-group-btn:not(:first-child):not(:last-child),
-#np_admin .input-group .form-control:not(:first-child):not(:last-child) {
-  border-radius: 0;
-}
-/* line 51, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon,
-#np_admin .input-group-btn {
-  width: 1%;
-  white-space: nowrap;
-  vertical-align: middle;
-}
-/* line 59, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon {
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1;
-  color: #555555;
-  text-align: center;
-  background-color: #eeeeee;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-/* line 71, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon.input-sm, #np_admin .input-group-sm > .input-group-addon.form-control,
-#np_admin .input-group-sm > .input-group-addon,
-#np_admin .input-group-sm > .input-group-btn > .input-group-addon.btn {
-  padding: 5px 10px;
-  font-size: 12px;
-  border-radius: 3px;
-}
-/* line 76, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon.input-lg, #np_admin .input-group-lg > .input-group-addon.form-control,
-#np_admin .input-group-lg > .input-group-addon,
-#np_admin .input-group-lg > .input-group-btn > .input-group-addon.btn {
-  padding: 10px 16px;
-  font-size: 18px;
-  border-radius: 6px;
-}
-/* line 84, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon input[type="radio"],
-#np_admin .input-group-addon input[type="checkbox"] {
-  margin-top: 0;
-}
-/* line 94, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group .form-control:first-child,
-#np_admin .input-group-addon:first-child,
-#np_admin .input-group-btn:first-child > .btn,
-#np_admin .input-group-btn:first-child > .dropdown-toggle,
-#np_admin .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-/* line 97, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon:first-child {
-  border-right: 0;
-}
-/* line 104, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group .form-control:last-child,
-#np_admin .input-group-addon:last-child,
-#np_admin .input-group-btn:last-child > .btn,
-#np_admin .input-group-btn:last-child > .dropdown-toggle,
-#np_admin .input-group-btn:first-child > .btn:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 107, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-addon:last-child {
-  border-left: 0;
-}
-/* line 113, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-btn {
-  position: relative;
-  white-space: nowrap;
-}
-/* line 118, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-btn:first-child > .btn {
-  margin-right: -1px;
-}
-/* line 121, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-btn:last-child > .btn {
-  margin-left: -1px;
-}
-/* line 125, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-btn > .btn {
-  position: relative;
-}
-/* line 128, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-btn > .btn + .btn {
-  margin-left: -4px;
-}
-/* line 133, ../sass/vendor/bootstrap/_input-groups.scss */
-#np_admin .input-group-btn > .btn:hover, #np_admin .input-group-btn > .btn:active {
-  z-index: 2;
-}
-/* line 9, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav {
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .nav:before, #np_admin .nav:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .nav:after {
-  clear: both;
-}
-/* line 15, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav > li {
-  position: relative;
-  display: block;
-}
-/* line 19, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav > li > a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-}
-/* line 24, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav > li > a:hover, #np_admin .nav > li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
-}
-/* line 31, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav > li.disabled > a {
-  color: #999999;
-}
-/* line 35, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav > li.disabled > a:hover, #np_admin .nav > li.disabled > a:focus {
-  color: #999999;
-  text-decoration: none;
-  background-color: transparent;
-  cursor: not-allowed;
-}
-/* line 48, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav .open > a, #np_admin .nav .open > a:hover, #np_admin .nav .open > a:focus {
-  background-color: #eeeeee;
-  border-color: #66ff66;
-}
-/* line 52, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav .open > a .caret, #np_admin .nav .open > a:hover .caret, #np_admin .nav .open > a:focus .caret {
-  border-top-color: #1aff1a;
-  border-bottom-color: #1aff1a;
-}
-/* line 64, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav .nav-divider {
-  height: 1px;
-  margin: 9px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
-}
-/* line 71, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav > li > a > img {
-  max-width: none;
-}
-/* line 81, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs {
-  border-bottom: 1px solid #dddddd;
-}
-/* line 83, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs > li {
-  float: left;
-  margin-bottom: -1px;
-}
-/* line 89, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs > li > a {
-  margin-right: 2px;
-  line-height: 1.42857;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-}
-/* line 94, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
-}
-/* line 103, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs > li.active > a, #np_admin .nav-tabs > li.active > a:hover, #np_admin .nav-tabs > li.active > a:focus {
-  color: #555555;
-  background-color: white;
-  border: 1px solid #dddddd;
-  border-bottom-color: transparent;
-  cursor: default;
-}
-/* line 123, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-pills > li {
-  float: left;
-}
-/* line 127, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-pills > li > a {
-  border-radius: 4px;
-}
-/* line 130, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-pills > li + li {
-  margin-left: 2px;
-}
-/* line 138, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-pills > li.active > a, #np_admin .nav-pills > li.active > a:hover, #np_admin .nav-pills > li.active > a:focus {
-  color: white;
-  background-color: #66ff66;
-}
-/* line 142, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-pills > li.active > a .caret, #np_admin .nav-pills > li.active > a:hover .caret, #np_admin .nav-pills > li.active > a:focus .caret {
-  border-top-color: white;
-  border-bottom-color: white;
-}
-/* line 154, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-stacked > li {
-  float: none;
-}
-/* line 156, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-stacked > li + li {
-  margin-top: 2px;
-  margin-left: 0;
-}
-/* line 170, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-justified, #np_admin .nav-tabs.nav-justified {
-  width: 100%;
-}
-/* line 173, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-justified > li, #np_admin .nav-tabs.nav-justified > li {
-  float: none;
-}
-/* line 175, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-justified > li > a, #np_admin .nav-tabs.nav-justified > li > a {
-  text-align: center;
-  margin-bottom: 5px;
-}
-/* line 181, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-justified > .dropdown .dropdown-menu, #np_admin .nav-tabs.nav-justified > .dropdown .dropdown-menu {
-  top: auto;
-  left: auto;
-}
-@media (min-width: 768px) {
-  /* line 187, ../sass/vendor/bootstrap/_navs.scss */
-  #np_admin .nav-justified > li, #np_admin .nav-tabs.nav-justified > li {
-    display: table-cell;
-    width: 1%;
-  }
-  /* line 190, ../sass/vendor/bootstrap/_navs.scss */
-  #np_admin .nav-justified > li > a, #np_admin .nav-tabs.nav-justified > li > a {
-    margin-bottom: 0;
-  }
-}
-/* line 200, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs-justified, #np_admin .nav-tabs.nav-justified {
-  border-bottom: 0;
-}
-/* line 203, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs-justified > li > a, #np_admin .nav-tabs.nav-justified > li > a {
-  margin-right: 0;
-  border-radius: 4px;
-}
-/* line 211, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs-justified > .active > a, #np_admin .nav-tabs.nav-justified > .active > a,
-#np_admin .nav-tabs-justified > .active > a:hover,
-#np_admin .nav-tabs.nav-justified > .active > a:hover,
-#np_admin .nav-tabs-justified > .active > a:focus,
-#np_admin .nav-tabs.nav-justified > .active > a:focus {
-  border: 1px solid #dddddd;
-}
-@media (min-width: 768px) {
-  /* line 216, ../sass/vendor/bootstrap/_navs.scss */
-  #np_admin .nav-tabs-justified > li > a, #np_admin .nav-tabs.nav-justified > li > a {
-    border-bottom: 1px solid #dddddd;
-    border-radius: 4px 4px 0 0;
-  }
-  /* line 222, ../sass/vendor/bootstrap/_navs.scss */
-  #np_admin .nav-tabs-justified > .active > a, #np_admin .nav-tabs.nav-justified > .active > a,
-  #np_admin .nav-tabs-justified > .active > a:hover,
-  #np_admin .nav-tabs.nav-justified > .active > a:hover,
-  #np_admin .nav-tabs-justified > .active > a:focus,
-  #np_admin .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: white;
-  }
-}
-/* line 234, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .tab-content > .tab-pane {
-  display: none;
-}
-/* line 237, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .tab-content > .active {
-  display: block;
-}
-/* line 247, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav .caret {
-  border-top-color: #66ff66;
-  border-bottom-color: #66ff66;
-}
-/* line 251, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav a:hover .caret {
-  border-top-color: #1aff1a;
-  border-bottom-color: #1aff1a;
-}
-/* line 257, ../sass/vendor/bootstrap/_navs.scss */
-#np_admin .nav-tabs .dropdown-menu {
-  margin-top: -1px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 11, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .navbar:before, #np_admin .navbar:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .navbar:after {
-  clear: both;
-}
-@media (min-width: 768px) {
-  /* line 11, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar {
-    border-radius: 4px;
-  }
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .navbar-header:before, #np_admin .navbar-header:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .navbar-header:after {
-  clear: both;
-}
-@media (min-width: 768px) {
-  /* line 31, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-header {
-    float: left;
-  }
-}
-/* line 50, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-collapse {
-  max-height: 340px;
-  overflow-x: visible;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  -webkit-overflow-scrolling: touch;
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .navbar-collapse:before, #np_admin .navbar-collapse:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .navbar-collapse:after {
-  clear: both;
-}
-/* line 60, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-collapse.in {
-  overflow-y: auto;
-}
-@media (min-width: 768px) {
-  /* line 50, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-collapse {
-    width: auto;
-    border-top: 0;
-    box-shadow: none;
-  }
-  /* line 69, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-collapse.collapse {
-    display: block !important;
-    height: auto !important;
-    padding-bottom: 0;
-    overflow: visible !important;
-  }
-  /* line 76, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-collapse.in {
-    overflow-y: auto;
-  }
-  /* line 81, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-collapse .navbar-nav.navbar-left:first-child {
-    margin-left: -15px;
-  }
-  /* line 84, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-collapse .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
-  }
-  /* line 87, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-collapse .navbar-text:last-child {
-    margin-right: 0;
-  }
-}
-/* line 99, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .container > .navbar-header,
-#np_admin .container > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-@media (min-width: 768px) {
-  /* line 99, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .container > .navbar-header,
-  #np_admin .container > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-/* line 117, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-static-top {
-  z-index: 1000;
-  border-width: 0 0 1px;
-}
-@media (min-width: 768px) {
-  /* line 117, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-static-top {
-    border-radius: 0;
-  }
-}
-/* line 128, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-fixed-top,
-#np_admin .navbar-fixed-bottom {
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-}
-@media (min-width: 768px) {
-  /* line 128, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-fixed-top,
-  #np_admin .navbar-fixed-bottom {
-    border-radius: 0;
-  }
-}
-/* line 139, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-fixed-top {
-  top: 0;
-  border-width: 0 0 1px;
-}
-/* line 143, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-fixed-bottom {
-  bottom: 0;
-  margin-bottom: 0;
-  border-width: 1px 0 0;
-}
-/* line 152, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-brand {
-  float: left;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
-}
-/* line 159, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-brand:hover, #np_admin .navbar-brand:focus {
-  text-decoration: none;
-}
-@media (min-width: 768px) {
-  /* line 164, ../sass/vendor/bootstrap/_navbar.scss */
-  .navbar > .container #np_admin .navbar-brand {
-    margin-left: -15px;
-  }
-}
-/* line 176, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-toggle {
-  position: relative;
-  float: right;
-  margin-right: 15px;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-/* line 187, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
-}
-/* line 193, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 4px;
-}
-@media (min-width: 768px) {
-  /* line 176, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-toggle {
-    display: none;
-  }
-}
-/* line 208, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-nav {
-  margin: 7.5px -15px;
-}
-/* line 211, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
-}
-@media (max-width: 767px) {
-  /* line 219, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav .open .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-  /* line 228, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav .open .dropdown-menu > li > a,
-  #np_admin .navbar-nav .open .dropdown-menu .dropdown-header {
-    padding: 5px 15px 5px 25px;
-  }
-  /* line 231, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav .open .dropdown-menu > li > a {
-    line-height: 20px;
-  }
-  /* line 234, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav .open .dropdown-menu > li > a:hover, #np_admin .navbar-nav .open .dropdown-menu > li > a:focus {
-    background-image: none;
-  }
-}
-@media (min-width: 768px) {
-  /* line 208, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav {
-    float: left;
-    margin: 0;
-  }
-  /* line 246, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav > li {
-    float: left;
-  }
-  /* line 248, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-}
-@media (min-width: 768px) {
-  /* line 265, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-left {
-    float: left !important;
-  }
-  /* line 268, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-right {
-    float: right !important;
-  }
-}
-/* line 279, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-form {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding: 10px 15px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-@media (max-width: 767px) {
-  /* line 291, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-form .form-group {
-    margin-bottom: 5px;
-  }
-}
-@media (min-width: 768px) {
-  /* line 279, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-form {
-    width: auto;
-    border: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-}
-/* line 316, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/* line 321, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-/* line 327, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-nav.pull-right > li > .dropdown-menu,
-#np_admin .navbar-nav > li > .dropdown-menu.pull-right {
-  left: auto;
-  right: 0;
-}
-/* line 337, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-/* line 346, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-text {
-  float: left;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-@media (min-width: 768px) {
-  /* line 346, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-text {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-}
-/* line 360, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
-}
-/* line 364, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-brand {
-  color: #777777;
-}
-/* line 367, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-brand:hover, #np_admin .navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
-  background-color: transparent;
-}
-/* line 373, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-text {
-  color: #777777;
-}
-/* line 378, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > li > a {
-  color: #777777;
-}
-/* line 382, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > li > a:hover, #np_admin .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
-  background-color: transparent;
-}
-/* line 390, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > .active > a, #np_admin .navbar-default .navbar-nav > .active > a:hover, #np_admin .navbar-default .navbar-nav > .active > a:focus {
-  color: #555555;
-  background-color: #e7e7e7;
-}
-/* line 398, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > .disabled > a, #np_admin .navbar-default .navbar-nav > .disabled > a:hover, #np_admin .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
-  background-color: transparent;
-}
-/* line 405, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-toggle {
-  border-color: #dddddd;
-}
-/* line 408, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-toggle:hover, #np_admin .navbar-default .navbar-toggle:focus {
-  background-color: #dddddd;
-}
-/* line 411, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-toggle .icon-bar {
-  background-color: #cccccc;
-}
-/* line 417, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-collapse,
-#np_admin .navbar-default .navbar-form {
-  border-color: #e7e7e7;
-}
-/* line 425, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > .dropdown > a:hover .caret,
-#np_admin .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #333333;
-  border-bottom-color: #333333;
-}
-/* line 434, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > .open > a, #np_admin .navbar-default .navbar-nav > .open > a:hover, #np_admin .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #e7e7e7;
-  color: #555555;
-}
-/* line 437, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > .open > a .caret, #np_admin .navbar-default .navbar-nav > .open > a:hover .caret, #np_admin .navbar-default .navbar-nav > .open > a:focus .caret {
-  border-top-color: #555555;
-  border-bottom-color: #555555;
-}
-/* line 443, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-nav > .dropdown > a .caret {
-  border-top-color: #777777;
-  border-bottom-color: #777777;
-}
-@media (max-width: 767px) {
-  /* line 452, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777777;
-  }
-  /* line 455, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, #np_admin .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333333;
-    background-color: transparent;
-  }
-  /* line 463, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-default .navbar-nav .open .dropdown-menu > .active > a, #np_admin .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, #np_admin .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #555555;
-    background-color: #e7e7e7;
-  }
-  /* line 471, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, #np_admin .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, #np_admin .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #cccccc;
-    background-color: transparent;
-  }
-}
-/* line 485, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-link {
-  color: #777777;
-}
-/* line 487, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-default .navbar-link:hover {
-  color: #333333;
-}
-/* line 496, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse {
-  background-color: #222222;
-  border-color: #090909;
-}
-/* line 500, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-brand {
-  color: #999999;
-}
-/* line 503, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-brand:hover, #np_admin .navbar-inverse .navbar-brand:focus {
-  color: white;
-  background-color: transparent;
-}
-/* line 509, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-text {
-  color: #999999;
-}
-/* line 514, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
-}
-/* line 518, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > li > a:hover, #np_admin .navbar-inverse .navbar-nav > li > a:focus {
-  color: white;
-  background-color: transparent;
-}
-/* line 526, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > .active > a, #np_admin .navbar-inverse .navbar-nav > .active > a:hover, #np_admin .navbar-inverse .navbar-nav > .active > a:focus {
-  color: white;
-  background-color: #090909;
-}
-/* line 534, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > .disabled > a, #np_admin .navbar-inverse .navbar-nav > .disabled > a:hover, #np_admin .navbar-inverse .navbar-nav > .disabled > a:focus {
-  color: #444444;
-  background-color: transparent;
-}
-/* line 542, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-toggle {
-  border-color: #333333;
-}
-/* line 545, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-toggle:hover, #np_admin .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
-}
-/* line 548, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: white;
-}
-/* line 554, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-collapse,
-#np_admin .navbar-inverse .navbar-form {
-  border-color: #101010;
-}
-/* line 563, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > .open > a, #np_admin .navbar-inverse .navbar-nav > .open > a:hover, #np_admin .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #090909;
-  color: white;
-}
-/* line 568, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
-  border-top-color: white;
-  border-bottom-color: white;
-}
-/* line 572, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > .dropdown > a .caret {
-  border-top-color: #999999;
-  border-bottom-color: #999999;
-}
-/* line 580, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-nav > .open > a .caret, #np_admin .navbar-inverse .navbar-nav > .open > a:hover .caret, #np_admin .navbar-inverse .navbar-nav > .open > a:focus .caret {
-  border-top-color: white;
-  border-bottom-color: white;
-}
-@media (max-width: 767px) {
-  /* line 590, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #090909;
-  }
-  /* line 593, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #999999;
-  }
-  /* line 596, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: white;
-    background-color: transparent;
-  }
-  /* line 604, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: white;
-    background-color: #090909;
-  }
-  /* line 612, ../sass/vendor/bootstrap/_navbar.scss */
-  #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, #np_admin .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #444444;
-    background-color: transparent;
-  }
-}
-/* line 621, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-link {
-  color: #999999;
-}
-/* line 623, ../sass/vendor/bootstrap/_navbar.scss */
-#np_admin .navbar-inverse .navbar-link:hover {
-  color: white;
 }
 /* line 6, ../sass/vendor/bootstrap/_breadcrumbs.scss */
 #np_admin .breadcrumb {
@@ -3782,62 +3151,6 @@ body.np_disabled {
 #np_admin .pagination-sm > li:last-child > span {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
-}
-/* line 6, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager {
-  padding-left: 0;
-  margin: 20px 0;
-  list-style: none;
-  text-align: center;
-}
-/* line 21, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .pager:before, #np_admin .pager:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-/* line 25, ../sass/vendor/bootstrap/_mixins.scss */
-#np_admin .pager:after {
-  clear: both;
-}
-/* line 12, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager li {
-  display: inline;
-}
-/* line 15, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager li > a,
-#np_admin .pager li > span {
-  display: inline-block;
-  padding: 5px 14px;
-  background-color: white;
-  border: 1px solid #dddddd;
-  border-radius: 15px;
-}
-/* line 24, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager li > a:hover,
-#np_admin .pager li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
-}
-/* line 32, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager .next > a,
-#np_admin .pager .next > span {
-  float: right;
-}
-/* line 39, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager .previous > a,
-#np_admin .pager .previous > span {
-  float: left;
-}
-/* line 48, ../sass/vendor/bootstrap/_pager.scss */
-#np_admin .pager .disabled > a,
-#np_admin .pager .disabled > a:hover,
-#np_admin .pager .disabled > a:focus,
-#np_admin .pager .disabled > span {
-  color: #999999;
-  background-color: white;
-  cursor: not-allowed;
 }
 /* line 5, ../sass/vendor/bootstrap/_labels.scss */
 #np_admin .label {
@@ -4001,77 +3314,6 @@ body.np_disabled {
 /* line 425, ../sass/vendor/bootstrap/_mixins.scss */
 #np_admin .alert-danger .alert-link {
   color: #953b39;
-}
-/* line 8, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group {
-  margin-bottom: 20px;
-  padding-left: 0;
-}
-/* line 17, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-  background-color: white;
-  border: 1px solid #dddddd;
-}
-/* line 27, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-}
-/* line 30, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item:last-child {
-  margin-bottom: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-/* line 36, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item > .badge {
-  float: right;
-}
-/* line 39, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item > .badge + .badge {
-  margin-right: 5px;
-}
-/* line 45, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin a.list-group-item {
-  color: #555555;
-}
-/* line 48, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin a.list-group-item .list-group-item-heading {
-  color: #333333;
-}
-/* line 54, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin a.list-group-item:hover, #np_admin a.list-group-item:focus {
-  text-decoration: none;
-  background-color: whitesmoke;
-}
-/* line 62, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin a.list-group-item.active, #np_admin a.list-group-item.active:hover, #np_admin a.list-group-item.active:focus {
-  z-index: 2;
-  color: white;
-  background-color: #66ff66;
-  border-color: #66ff66;
-}
-/* line 69, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin a.list-group-item.active .list-group-item-heading, #np_admin a.list-group-item.active:hover .list-group-item-heading, #np_admin a.list-group-item.active:focus .list-group-item-heading {
-  color: inherit;
-}
-/* line 72, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin a.list-group-item.active .list-group-item-text, #np_admin a.list-group-item.active:hover .list-group-item-text, #np_admin a.list-group-item.active:focus .list-group-item-text {
-  color: white;
-}
-/* line 81, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item-heading {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-/* line 85, ../sass/vendor/bootstrap/_list-group.scss */
-#np_admin .list-group-item-text {
-  margin-bottom: 0;
-  line-height: 1.3;
 }
 /* line 7, ../sass/vendor/bootstrap/_panels.scss */
 #np_admin .panel {
@@ -4937,480 +4179,4 @@ body.np_disabled {
   #np_admin td.hidden-print {
     display: none !important;
   }
-}
-
-/* line 1, ../sass/np_admin/_toolbar.sass */
-#np_admin {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  top: -76px;
-  width: 100%;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-/* line 8, ../sass/np_admin/_toolbar.sass */
-#np_admin h1, #np_admin h2, #np_admin h3, #np_admin h4, #np_admin h5, #np_admin h6 {
-  text-transform: none;
-  color: #414141;
-}
-/* line 11, ../sass/np_admin/_toolbar.sass */
-#np_admin a {
-  color: #33cc33;
-  text-decoration: none;
-}
-/* line 14, ../sass/np_admin/_toolbar.sass */
-#np_admin a:hover {
-  text-decoration: none;
-  color: #55ee55;
-}
-
-/* line 18, ../sass/np_admin/_toolbar.sass */
-.np_enabled #np_admin {
-  top: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-/* line 22, ../sass/np_admin/_toolbar.sass */
-.np_disabled #np_admin {
-  top: -76px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-/* line 26, ../sass/np_admin/_toolbar.sass */
-#np_toolbar_container {
-  height: 75px;
-  width: 100%;
-  border-bottom: 1px solid #c1c1c1;
-  overflow: hidden;
-  background: #383838;
-  background: -moz-linear-gradient(top, #303030 1%, #404040 58%, #404040 85%, #303030 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #303030), color-stop(58%, #404040), color-stop(85%, #404040), color-stop(100%, #303030));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#303030',GradientType=0 );
-}
-
-/* line 36, ../sass/np_admin/_toolbar.sass */
-#np_toolbar {
-  color: #d6d6d6;
-  height: 75px;
-  width: 960px;
-  margin: 0 auto;
-}
-/* line 41, ../sass/np_admin/_toolbar.sass */
-#np_toolbar .np_icons {
-  padding-top: 20px;
-}
-
-/* line 46, ../sass/np_admin/_toolbar.sass */
-#np_admin .np_icons ul {
-  list-style: none;
-  margin: 0;
-}
-/* line 49, ../sass/np_admin/_toolbar.sass */
-#np_admin .np_icons li {
-  float: left;
-  margin: 0;
-}
-/* line 52, ../sass/np_admin/_toolbar.sass */
-#np_admin .np_icons a {
-  display: block;
-  color: #888888;
-  padding: 0 25px;
-  height: 40px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 58, ../sass/np_admin/_toolbar.sass */
-#np_admin .np_icons a:hover {
-  color: white;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 61, ../sass/np_admin/_toolbar.sass */
-#np_admin .np_icons a.active {
-  color: #66ff66;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 64, ../sass/np_admin/_toolbar.sass */
-#np_admin .np_icons i {
-  display: block;
-  text-align: center;
-  margin: 0;
-  width: auto;
-  padding: 0 0 10px 0;
-}
-
-/* line 71, ../sass/np_admin/_toolbar.sass */
-#np_userbox {
-  margin-top: 5px;
-}
-
-/* line 74, ../sass/np_admin/_toolbar.sass */
-#np_usernav {
-  list-style: none;
-  margin: 0;
-}
-/* line 77, ../sass/np_admin/_toolbar.sass */
-#np_usernav li {
-  float: left;
-}
-/* line 79, ../sass/np_admin/_toolbar.sass */
-#np_usernav a {
-  display: block;
-  color: #d6d6d6;
-  padding: 0 15px;
-}
-/* line 83, ../sass/np_admin/_toolbar.sass */
-#np_usernav a:hover {
-  color: white;
-}
-/* line 85, ../sass/np_admin/_toolbar.sass */
-#np_usernav li:first-child a {
-  border-right: 1px dotted white;
-  padding-left: 0;
-}
-
-/* line 1, ../sass/np_admin/_menu_toggle.sass */
-a#np_menu_toggle {
-  -moz-border-radius-bottomleft: 7px;
-  -webkit-border-bottom-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  -moz-border-radius-bottomright: 7px;
-  -webkit-border-bottom-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  background: #414141;
-  padding: 4px 8px;
-  margin-left: 20px;
-  width: 20px;
-  display: block;
-  position: relative;
-  top: -1px;
-}
-/* line 10, ../sass/np_admin/_menu_toggle.sass */
-a#np_menu_toggle i {
-  height: 24px;
-  color: #66ff66;
-  display: block;
-}
-
-/* line 16, ../sass/np_admin/_menu_toggle.sass */
-.np_disabled a#np_menu_toggle i {
-  color: white;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 20, ../sass/np_admin/_menu_toggle.sass */
-.np_disabled a#np_menu_toggle:hover i {
-  color: #66ff66;
-}
-
-/* line 23, ../sass/np_admin/_menu_toggle.sass */
-.np_enabled a#np_menu_toggle {
-  position: absolute;
-  top: 75px;
-  left: 20px;
-  margin: 0;
-}
-/* line 28, ../sass/np_admin/_menu_toggle.sass */
-.np_enabled a#np_menu_toggle i {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  position: relative;
-  left: 4px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-/* line 2, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_inner {
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
-  margin-top: 30px;
-  background: #eeeff0;
-  border: 5px solid #414141;
-}
-/* line 8, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_head {
-  background: #414141;
-}
-/* line 10, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_head h1 {
-  color: white;
-  font-size: 18px;
-  margin: 0;
-  padding-left: 20px;
-}
-/* line 15, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_head h1 a {
-  color: white;
-}
-/* line 18, ../sass/np_admin/_panel.sass */
-#np_panel a.np_close_panel {
-  color: white;
-  font-size: 1.5em;
-  padding-top: 6px;
-  padding-right: 14px;
-  display: block;
-  float: right;
-}
-/* line 25, ../sass/np_admin/_panel.sass */
-#np_panel a.np_close_panel:hover {
-  color: #66ff66;
-  text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 30, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_content {
-  padding: 20px;
-}
-/* line 33, ../sass/np_admin/_panel.sass */
-#np_panel .np_icons a {
-  color: #414141;
-  padding-top: 5px;
-  padding: 20px;
-}
-/* line 37, ../sass/np_admin/_panel.sass */
-#np_panel .np_icons a:hover {
-  color: #414141;
-  background-color: #99ff99;
-}
-/* line 41, ../sass/np_admin/_panel.sass */
-#np_panel form {
-  margin-bottom: 0;
-}
-/* line 44, ../sass/np_admin/_panel.sass */
-#np_panel textarea {
-  width: 100%;
-  width: 725px;
-  height: 350px;
-}
-
-/* line 3, ../sass/np_admin/_themes.sass */
-.np_theme_preview_thumb {
-  position: relative;
-  width: 272px;
-  height: 175px;
-}
-
-/* line 8, ../sass/np_admin/_themes.sass */
-.np_theme_info {
-  margin-bottom: 60px;
-}
-
-/* line 11, ../sass/np_admin/_themes.sass */
-.np_theme_info:last-child {
-  margin-bottom: 0;
-}
-
-/* line 14, ../sass/np_admin/_themes.sass */
-.np_theme_switcher {
-  -moz-border-radius-topleft: 7px;
-  -webkit-border-top-left-radius: 7px;
-  border-top-left-radius: 7px;
-  -moz-border-radius-bottomleft: 7px;
-  -webkit-border-bottom-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  width: 150px;
-  height: 20px;
-  top: 20px;
-  right: -130px;
-  padding: 5px;
-  padding-left: 8px;
-  background: #414141;
-  border: 1px solid #cccccc;
-  overflow: hidden;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 30, ../sass/np_admin/_themes.sass */
-.np_theme_switcher form > div, .np_theme_switcher form label:first-child span {
-  opacity: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 34, ../sass/np_admin/_themes.sass */
-.np_theme_switcher label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 3px;
-  color: white;
-}
-/* line 40, ../sass/np_admin/_themes.sass */
-.np_theme_switcher:hover {
-  right: 0;
-  height: 100px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-/* line 44, ../sass/np_admin/_themes.sass */
-.np_theme_switcher:hover form > div, .np_theme_switcher:hover form label:first-child span {
-  opacity: 1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-/* line 48, ../sass/np_admin/_themes.sass */
-.np_enabled .np_theme_switcher {
-  top: 95px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-/* line 2, ../sass/np_admin/_blocks.sass */
-.np_enabled .np_editable_block {
-  position: relative;
-}
-/* line 5, ../sass/np_admin/_blocks.sass */
-.np_enabled .np_mask {
-  border: 1px solid #66ff66;
-  background-color: rgba(102, 255, 102, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-/* line 11, ../sass/np_admin/_blocks.sass */
-.np_enabled .np_mask:hover {
-  background-color: rgba(102, 255, 102, 0.7);
-}
-/* line 14, ../sass/np_admin/_blocks.sass */
-.np_enabled .np_add_block {
-  background: #66ff66;
-  color: white;
-  height: 20px;
-  -moz-border-radius-bottomleft: 8px;
-  -webkit-border-bottom-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  -moz-border-radius-bottomright: 8px;
-  -webkit-border-bottom-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-/* line 19, ../sass/np_admin/_blocks.sass */
-.np_enabled .np_add_block:hover {
-  background: #88ff88;
-}
-/* line 21, ../sass/np_admin/_blocks.sass */
-.np_enabled .np_add_block a {
-  color: white;
-}
-
-/* line 1, ../sass/np_admin/_login.sass */
-.np_login {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #999999;
-}
-/* line 4, ../sass/np_admin/_login.sass */
-.np_login form {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  background: #666666;
-  border: 2px solid #333333;
-  color: #333333;
-  width: 500px;
-  margin: 200px auto 0;
-  padding: 0;
-}
-/* line 12, ../sass/np_admin/_login.sass */
-.np_login header {
-  background: #333333;
-  height: 120px;
-  position: relative;
-}
-/* line 16, ../sass/np_admin/_login.sass */
-.np_login h1 {
-  color: white;
-  margin: 0;
-  position: absolute;
-  top: 35px;
-  left: 40px;
-  font-size: 18px;
-}
-/* line 23, ../sass/np_admin/_login.sass */
-.np_login #flash_msg {
-  background: #66ff66;
-  position: absolute;
-  bottom: 0;
-  padding: 8px 0;
-  width: 100%;
-  text-indent: 80px;
-}
-/* line 30, ../sass/np_admin/_login.sass */
-.np_login #flash_msg.err {
-  background-color: red;
-}
-/* line 32, ../sass/np_admin/_login.sass */
-.np_login .form_body {
-  padding: 20px 80px 50px;
-  position: relative;
-}
-/* line 35, ../sass/np_admin/_login.sass */
-.np_login label {
-  display: block;
-}
-/* line 37, ../sass/np_admin/_login.sass */
-.np_login input[type="text"],
-.np_login input[type="password"] {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  width: 340px;
-  border: 1px solid #333333;
-  padding: 5px 0;
-}
-/* line 44, ../sass/np_admin/_login.sass */
-.np_login input[type="submit"] {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  background: #66ff66;
-  border: 1px solid #333333;
-  color: white;
-  padding: 4px 10px;
-  position: absolute;
-  right: 80px;
 }
