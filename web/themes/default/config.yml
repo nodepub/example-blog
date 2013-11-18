@@ -14,6 +14,10 @@ stylesheets:
   - layout.css
   - theme.css
 
+layouts:
+  - layout.twig
+  - layout_sidebar.twig
+
 # each key suffix indicates its type
 # possible types are _color, _font, _image
 # should these be form types?

@@ -23,12 +23,11 @@
     <![endif]-->
 
     <!-- icons -->
-    {# theme_icons() #}
+    {{ theme_icons() }}
 </head>
 
 {# TODO:
    * Not crazy about "container_12" classes
-   * Need theme_icons() function
 #}
 
 <body class="{{ body_class() }}">
@@ -41,7 +40,7 @@
                    to change columns and/or content while keeping the containing div in place #}
                 {% block header %}
                     {% block site_name %}
-                        <h1 id="site_name"><a href="/">{{ site.name }}</a></h1>
+                        <h1 id="site_name"><a href="/">{{ site.title }}</a></h1>
                     {% endblock %}
                     {% block site_tagline %}
                         <h2 id="site_tagline">{{ site.tagline }}</h2>
