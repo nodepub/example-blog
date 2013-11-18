@@ -1,0 +1,22 @@
+.np_enabled
+  .np_editable_block
+    position: relative
+
+  .np_mask
+    border: 1px solid $np_green
+    background-color: rgba(102, 255, 102, 0.5)
+    position: absolute
+    top: 0
+    left: 0
+    &:hover
+      background-color: rgba(102, 255, 102, 0.7)
+
+  .np_add_block
+    background: $np_green
+    color: #fff
+    height: 20px
+    +border-bottom-radius(8px)
+    &:hover
+      background: $np_green + #222
+    a
+      color: #fff

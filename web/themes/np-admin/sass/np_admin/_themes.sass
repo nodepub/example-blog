@@ -1,0 +1,50 @@
+// === themes ====================
+
+.np_theme_preview_thumb
+  position: relative
+  width: 272px
+  height: 175px
+
+.np_theme_info
+  margin-bottom: 60px
+
+.np_theme_info:last-child
+  margin-bottom: 0
+
+.np_theme_switcher
+  +border-left-radius(7px)
+  +np_fonts
+  position: absolute
+  width: 150px
+  height: 20px
+  top: 20px
+  right: -130px
+  padding: 5px
+  padding-left: 8px
+  background: $ui_main_color
+  border: 1px solid #ccc
+
+  overflow: hidden
+  +transition
+
+  form > div, form label:first-child span
+    opacity: 0
+    +transition
+
+  label
+    display: block
+    font-weight: bold
+    margin-bottom: 3px
+    color: #fff
+
+  &:hover
+    right: 0
+    height: 100px
+    +transition
+    form > div, form label:first-child span
+      opacity: 1
+      +transition
+
+.np_enabled .np_theme_switcher
+  top: $toolbar_height + 20px
+  +transition

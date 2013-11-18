@@ -2,19 +2,19 @@ name: NodePub Admin
 description: Default NodePub Administration Theme
 author: Andrew Gruner
 link: http://nodepub.com
-version: 0.1
+version: 0.5
 required_npub_version: 0.5
 highest_npub_version: 0.5
 first_releasedate: 2013-05-24
 latest_releasedate: 2013-05-24
 
 stylesheets:
-  - //netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css
-  - bootstrap.min.css
-  - np_main.css
+  - //netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+  - np_admin.css
 
 javascripts:
   - require.js
 
 settings:
-  body_bg_color: '#333'
+  main_color: '#414141'
+  accent_color: '#66ff66'

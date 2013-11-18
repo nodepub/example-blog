@@ -1,0 +1,15 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}Extensions{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for name, extension in extensions %}
+            <h2>{{ name }}</h2>
+            <p>Active?</p>
+            <p>Core?</p>
+            <h3>Toolbar Items</h3>
+            <h3>Block Types</h3>
+        {% endfor %}
+    </ul>
+{% endblock %}

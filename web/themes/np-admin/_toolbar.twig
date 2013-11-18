@@ -5,11 +5,11 @@
             <div id="np_icons" class="np_icons">
                 <ul>
                     {% for item in toolbar %}
-                        <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open"><i class="icon-{{ item.icon }} icon-2x"></i>{{ item.name }}</a></li>
+                        <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open"><i class="fa fa-{{ item.icon }} fa-2x"></i>{{ item.name }}</a></li>
                     {% endfor %}
                     {% if toolbar|length > 4 %}
                         <li class="more">
-                            <a href="{{ path('admin_settings') }}" data-panel="open"><i class="icon-ellipsis-horizontal icon-2x"></i>More</a>
+                            <a href="{{ path('admin_settings') }}" data-panel="open"><i class="fa fa-ellipsis-horizontal fa-2x"></i>More</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -23,12 +23,12 @@
             </div>
         </div>
     </div>
-    <div id="np_panel_container" class="container hide"></div>
-    <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}"><i class="icon-caret-down icon-2x"></i></a>
+    <div id="np_panel_container" class="container np_hide"></div>
+    <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}"><i class="fa fa-caret-down fa-2x"></i></a>
 </div>
 {# see old version for how stylesheets and js are imported using a helper #}
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="/themes/np-admin/css/np_main.css" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/themes/np-admin/css/np_admin.css" />
 
 {% include '@np-admin/_js_modules.twig' %}
 

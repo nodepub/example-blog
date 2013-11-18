@@ -1,0 +1,87 @@
+#np_admin
+  @include np_fonts
+  position: absolute
+  top: -$toolbar_height - 1px
+  width: 100%
+  font-size: 100%
+  vertical-align: baseline
+  h1, h2, h3, h4, h5, h6
+    text-transform: none
+    color: $ui_main_color
+  a
+    color: $ui_accent_color - #333
+    text-decoration: none
+    &:hover
+      text-decoration: none
+      color: $ui_accent_color - #111
+
+.np_enabled #np_admin
+  top: 0
+  +transition
+
+.np_disabled #np_admin
+  top: -$toolbar_height - 1px
+  +transition
+
+#np_toolbar_container
+  height: $toolbar_height
+  width: 100%
+  border-bottom: 1px solid #c1c1c1
+  overflow: hidden
+  background: #383838
+  background: -moz-linear-gradient(top, #303030 1%, #404040 58%, #404040 85%, #303030 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#303030), color-stop(58%,#404040), color-stop(85%,#404040), color-stop(100%,#303030))
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#303030', endColorstr='#303030',GradientType=0 )
+
+#np_toolbar
+  color: #d6d6d6
+  height: $toolbar_height
+  width: 960px
+  margin: 0 auto
+  .np_icons
+    padding-top: 20px
+
+#np_admin
+  .np_icons
+    ul
+      list-style: none
+      margin: 0
+    li
+      float: left
+      margin: 0
+    a
+      display: block
+      color: #888
+      padding: 0 25px
+      height: $icon_height
+      +transition
+      &:hover
+        color: #fff
+        +transition
+      &.active
+        color: $ui_accent_color
+        +transition
+    i
+      display: block
+      text-align: center
+      margin: 0
+      width: auto
+      padding: 0 0 10px 0
+
+#np_userbox
+  margin-top: 5px
+
+#np_usernav
+  list-style: none
+  margin: 0
+  li
+    float: left
+  a
+    display: block
+    color: #d6d6d6
+    padding: 0 15px
+    &:hover
+      color: #fff
+  li:first-child a
+    border-right: 1px dotted #fff
+    padding-left: 0

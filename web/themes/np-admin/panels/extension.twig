@@ -1,0 +1,10 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}<a href="{{ path('admin_extensions') }}">Extensions</a> <i class="icon-chevron-right"></i> {{ extension.name }}{% endblock %}
+
+{% block content %}
+    <p>Active?</p>
+    <p>Core?</p>
+    <h2>Toolbar Items</h2>
+    <h2>Block Types</h2>
+{% endblock %}

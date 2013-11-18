@@ -1,0 +1,47 @@
+#np_panel
+  .np_panel_inner
+    +border-radius(7px)
+    margin-top: 30px
+    background: #EEEFF0
+    border: 5px solid $ui_main_color
+
+  .np_panel_head
+    background: $ui_main_color
+    h1
+      color: #fff
+      font-size: 18px
+      margin: 0
+      padding-left: 20px
+      a
+        color: #fff
+
+  a.np_close_panel
+    color: #fff
+    font-size: 1.5em
+    padding-top: 6px
+    padding-right: 14px
+    display: block
+    float: right
+    &:hover
+      color: $ui_accent_color
+      text-decoration: none
+      +transition
+
+  .np_panel_content
+    padding: 20px
+
+  .np_icons a
+    color: $ui_main_color
+    padding-top: 5px
+    padding: 20px
+    &:hover
+      color: $ui_main_color
+      background-color: $ui_accent_color + #333
+
+  form
+    margin-bottom: 0
+
+  textarea
+    width: 100%
+    width: 725px
+    height: 350px

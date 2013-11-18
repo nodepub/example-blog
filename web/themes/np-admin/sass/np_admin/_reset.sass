@@ -1,0 +1,12 @@
+// when enabled, add top margin for where the toolbar will go
+body.np_enabled
+  margin: 0
+  margin-top: $toolbar_height + 1px
+  +transition
+
+body.np_disabled
+  margin-top: 0
+  +transition
+
+.np_hide
+  display: none

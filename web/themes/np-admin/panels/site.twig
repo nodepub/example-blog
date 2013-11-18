@@ -1,0 +1,11 @@
+{% extends '@np-admin/panel.twig' %}
+
+{% block nav %}<a href="{{ path('admin_sites') }}">Sites</a> <i class="icon-chevron-right"></i> {{ site.hostName }}{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for k,v in site %}
+            <li>{{ k }}: {{ v }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
