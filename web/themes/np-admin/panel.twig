@@ -1,11 +1,11 @@
-<div id="np_panel" class="{% block panel_class %}%} %}{% endblock %}">
-    <div class="col-xs-10 offset-1">
+<div id="np_panel" class="row {% block panel_class %}{% endblock %}">
+    <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">{% block panel_nav %}{% endblock %}</h3>
-                <a href="#" data-close="panel" class="np_close_panel"><i class="fa fa-times-circle"></i></a>
+                <a href="#" data-close="panel" class="np_close_panel">{{ font_icon('times-circle') }}</a>
             </div>
-            <div class="panel-body np_panel_content">
+            <div class="panel-body">
                 {{ include('@np-admin/_flash_messages.twig') }}
                 {% block panel_row %}
                     {% block panel_content %}

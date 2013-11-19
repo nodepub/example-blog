@@ -1,13 +1,13 @@
 {% extends '@np-admin/panel.twig' %}
 
-{% block nav %}Settings{% endblock %}
+{% block panel_nav %}Settings{% endblock %}
 
-{% block content %}
+{% block panel_content %}
     <p class="text-info">You can customize the toolbar by dragging your most-used items there.</p>
     <div class="np_icons">
         <ul>
             {% for setting in settings %}
-                <li class="{{ setting.slug }}"><a href="{{ path(setting.route) }}" data-panel="open"><i class="icon-{{ setting.icon }} icon-2x"></i>{{ setting.name }}</a></li>
+                <li class="{{ setting.slug }}"><a href="{{ path(setting.route) }}" data-panel="open">{{ font_icon(setting.icon, 'fa-2x') }}{{ setting.name }}</a></li>
             {% endfor %}
         </ul>
     </div>

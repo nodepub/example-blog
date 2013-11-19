@@ -1,6 +1,8 @@
 {% extends '@np-admin/panel.twig' %}
 
-{% block panel_nav %}<a href="{{ path('admin_sites') }}">Sites</a> <i class="icon-chevron-right"></i> {{ site.hostName }}{% endblock %}
+{% block panel_nav %}
+    {{ panel_nav([{'uri': path('admin_sites'), 'name': 'Sites'},{'name': site.hostName}]) }}
+{% endblock %}
 
 {% block panel_content %}
     <ul>

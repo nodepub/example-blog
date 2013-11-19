@@ -5,9 +5,13 @@
   width: 100%
   font-size: 100%
   vertical-align: baseline
+
+.np_admin
   h1, h2, h3, h4, h5, h6
     text-transform: none
     color: $ui_main_color
+  h2
+    margin-top: 0
   a
     color: $ui_accent_color - #333
     text-decoration: none
@@ -41,7 +45,7 @@
   .np_icons
     padding-top: 20px
 
-#np_admin
+.np_admin
   .np_icons
     ul
       list-style: none
@@ -57,6 +61,7 @@
       +transition
       &:hover
         color: #fff
+        text-decoration: none
         +transition
       &.active
         color: $ui_accent_color

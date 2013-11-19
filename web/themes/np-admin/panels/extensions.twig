@@ -3,13 +3,11 @@
 {% block panel_nav %}Extensions{% endblock %}
 
 {% block panel_content %}
-    <ul>
-        {% for name, extension in extensions %}
-            <h2>{{ name }}</h2>
-            <p>Active?</p>
-            <p>Core?</p>
-            <h3>Toolbar Items</h3>
-            <h3>Block Types</h3>
-        {% endfor %}
-    </ul>
+    {% for name, extension in extensions %}
+        <h2>{{ name }}</h2>
+        <p>Active?</p>
+        <p>Core?</p>
+        <h3>Toolbar Items</h3>
+        <h3>Block Types</h3>
+    {% endfor %}
 {% endblock %}

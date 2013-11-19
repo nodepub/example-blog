@@ -1,13 +1,15 @@
-{% extends '@np-admin/split_panel.twig' %}
+{% extends '@np-admin/panel_2col.twig' %}
 
 {% block panel_nav %}Blog{% endblock %}
 
 {% block column_1 %}
     <h2>Drafts</h2>
-    <form id="new_post">
-        <input id="np_new_post_title" type="text" class="span3" placeholder="Start a draft…">
+    <form id="new_post" role="form">
+        <div class="form-group">
+            <input id="np_new_post_title" type="text" class="form-control" placeholder="Start a draft…">
+        </div>
     </form>
-    <ul class="unstyled np_post_list">
+    <ul class="list-unstyled np_post_list">
         {% for draft in drafts %}
             <li><a href="{{ path('admin_blog_edit_post', {post: draft.id}) }}">{{ draft.title }}</a></li>
         {% else %}
@@ -16,22 +18,20 @@
     </ul>
 
     {% if drafts_page_count > 1 %}
-        <div class="pagination pagination-mini">
-            <ul>
-                {% for page in 1..drafts_page_count %}
-                    <li{% if page == page_number %} class="active"{% endif %}>
-                        <a href="{{ path('admin_blog_drafts', {page: page}) }}">{{ page }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+        <ul class="pagination pagination-sm">
+            {% for page in 1..drafts_page_count %}
+                <li{% if page == page_number %} class="active"{% endif %}>
+                    <a href="{{ path('admin_blog_drafts', {page: page}) }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+        </ul>
     {% endif %}
 
 {% endblock %}
 
 {% block column_2 %}
     <h2>Published</h2>
-    <ul class="unstyled np_post_list">
+    <ul class="list-unstyled np_post_list">
         {% for post in posts %}
             <li><a href="{{ path('admin_blog_edit_post', {post: post.id}) }}">{{ post.title }}</a></li>
         {% else %}
@@ -40,15 +40,13 @@
     </ul>
 
     {% if published_page_count > 1 %}
-        <div class="pagination pagination-mini">
-            <ul>
-                {% for page in 1..published_page_count %}
-                    <li{% if page == page_number %} class="active"{% endif %}>
-                        <a href="{{ path('admin_blog_posts', {page: page}) }}">{{ page }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+        <ul class="pagination pagination-sm">
+            {% for page in 1..published_page_count %}
+                <li{% if page == page_number %} class="active"{% endif %}>
+                    <a href="{{ path('admin_blog_posts', {page: page}) }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+        </ul>
     {% endif %}
 
 {% endblock %}

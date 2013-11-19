@@ -1,34 +1,32 @@
 #np_panel
-  .np_panel_inner
-    +border-radius(7px)
-    margin-top: 30px
-    background: #EEEFF0
-    border: 5px solid $ui_main_color
 
-  .np_panel_head
-    background: $ui_main_color
-    h1
-      color: #fff
-      font-size: 18px
-      margin: 0
-      padding-left: 20px
-      a
-        color: #fff
+  .panel-default
+    margin-top: 30px
+    //border: 4px solid $ui_main_color
+
+  .panel-heading, .panel-heading h3
+    color: #fff
+    position: relative
+
+  .panel-title
+    // breadcrumb separator
+    i.fa
+      padding: 0 10px
+
+  .panel-body
+    margin-top: 15px
 
   a.np_close_panel
     color: #fff
-    font-size: 1.5em
-    padding-top: 6px
-    padding-right: 14px
-    display: block
-    float: right
+    position: absolute
+    right: 6px
+    top: 6px
     &:hover
       color: $ui_accent_color
       text-decoration: none
       +transition
-
-  .np_panel_content
-    padding: 20px
+    i.fa
+      font-size: 1.5em
 
   .np_icons a
     color: $ui_main_color
@@ -38,10 +36,5 @@
       color: $ui_main_color
       background-color: $ui_accent_color + #333
 
-  form
-    margin-bottom: 0
-
   textarea
-    width: 100%
-    width: 725px
     height: 350px

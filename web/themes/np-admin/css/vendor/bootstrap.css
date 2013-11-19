@@ -3507,35 +3507,6 @@ input[type="button"].btn-block {
   border-bottom-color: #bce8f1;
 }
 
-/* line 6, ../../sass/vendor/bootstrap/_close.scss */
-.close {
-  float: right;
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 1;
-  color: black;
-  text-shadow: 0 1px 0 white;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
-}
-/* line 16, ../../sass/vendor/bootstrap/_close.scss */
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
-}
-
-/* line 29, ../../sass/vendor/bootstrap/_close.scss */
-button.close {
-  padding: 0;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  -webkit-appearance: none;
-}
-
 /* line 21, ../../sass/vendor/bootstrap/_mixins.scss */
 .clearfix:before, .clearfix:after {
   content: " ";

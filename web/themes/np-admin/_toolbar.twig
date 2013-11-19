@@ -1,15 +1,15 @@
 <!-- START of NodePub Toolbar -->
-<div id="np_admin">
+<div id="np_admin" class="np_admin">
     <div id="np_toolbar_container">
         <div id="np_toolbar">
             <div id="np_icons" class="np_icons">
                 <ul>
                     {% for item in toolbar %}
-                        <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open"><i class="fa fa-{{ item.icon }} fa-2x"></i>{{ item.name }}</a></li>
+                        <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open">{{ font_icon(item.icon, 'fa-2x') }}{{ item.name }}</a></li>
                     {% endfor %}
                     {% if toolbar|length > 4 %}
                         <li class="more">
-                            <a href="{{ path('admin_settings') }}" data-panel="open"><i class="fa fa-ellipsis-horizontal fa-2x"></i>More</a>
+                            <a href="{{ path('admin_settings') }}" data-panel="open">{{ font_icon('ellipsis-h', 'fa-2x') }}More</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div id="np_panel_container" class="container np_hide">{# ajax inserts panels here #}</div>
-    <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}"><i class="fa fa-caret-down fa-2x"></i></a>
+    <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}">{{ font_icon('caret-down', 'fa-2x') }}</a>
 </div>
 
 {# TODO: see old version for how stylesheets and js are imported using a helper, or use theme config to output them #}
