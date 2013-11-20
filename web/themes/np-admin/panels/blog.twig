@@ -2,6 +2,14 @@
 
 {% block panel_nav %}Blog{% endblock %}
 
+{% block panel_actions %}
+    <div class="btn-group">
+        <a href="#" class="btn btn-default">View Blog</a>
+        <a href="{{ path('admin_blog_settings') }}" class="btn btn-default">Blog Settings</a>
+        <a href="{{ path('admin_blog_new_post') }}" class="btn btn-primary">{{ font_icon('plus-circle') }} Add Post</a>
+    </div>
+{% endblock %}
+
 {% block column_1 %}
     <h2>Drafts</h2>
     <form id="new_post" role="form">

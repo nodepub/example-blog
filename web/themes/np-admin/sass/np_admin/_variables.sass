@@ -4,6 +4,7 @@ $default-transition-duration : 0.5s
 
 $np_green:        #66ff66
 $np_grey:         #414141
+$np_grey_green:   #a8cdd2
 $ui_main_color:   $np_grey
 $ui_accent_color: $np_green
 $warning_color:   red
@@ -13,14 +14,18 @@ $toolbar_height:  75px
 
 // bootstrap colors
 
-$brand-primary: $np_green
-$brand-success: $np_green
-//$brand-warning: #f0ad4e
-//$brand-danger:  #d9534f
-//$brand-info:    #5bc0de
+$brand-primary:       $np_grey
+$brand-success:       $np_green
 
-$panel-bg:                    #EEEFF0
-$panel-inner-border:          $ui_main_color
-$panel-border-radius:         6px
-$panel-default-border:        $ui_main_color
-$panel-default-heading-bg:    $ui_main_color
+//$btn-default-color: #333
+$btn-default-bg:      $np_grey_green
+$btn-default-border:  darken($np_grey_green, 10%)
+
+// 
+$link-color:          darken($np_green, 30%)
+
+$panel-bg:                 #EEEFF3
+$panel-inner-border:       $ui_main_color
+$panel-border-radius:      6px
+$panel-default-border:     $ui_main_color
+$panel-default-heading-bg: $ui_main_color

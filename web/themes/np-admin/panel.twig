@@ -7,6 +7,9 @@
             </div>
             <div class="panel-body">
                 {{ include('@np-admin/_flash_messages.twig') }}
+                <div class="np_panel_actions">
+                    {% block panel_actions %}{% endblock %}
+                </div>
                 {% block panel_row %}
                     {% block panel_content %}
                         {% if content is defined %}

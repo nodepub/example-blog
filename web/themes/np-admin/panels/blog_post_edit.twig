@@ -1,31 +1,26 @@
 {% extends '@np-admin/panel.twig' %}
 
 {% block panel_nav %}
-    {{ panel_nav([{name: 'Blog', uri: path('admin_blog')},{name: post.title}]) }}
+    {{ panel_nav([{name: 'Blog', uri: path('admin_blog')}, {name: 'Edit Post'}]) }}
 {% endblock %}
 
 {% block panel_content %}
 
-    <!-- <a href="#" class="np_icon_fullscreen -np_fullscreen">{{ font_icon('expand') }}</a> -->
-    
-    <a href="#" class="btn btn-default btn-sm -np_fullscreen">{{ font_icon('expand') }} Fullscreen</a>
-    <a href="#" class="btn btn-default btn-sm">{{ font_icon('eye') }} Preview</a>
-    
-    <form action="{{ path('admin_blog_update_post', {post: post.id}) }}" role="form">
+    {% if draft %}
+        {% set form_action = path('admin_blog_post_posts') %}
+    {% else %}
+        {% set form_action = path('admin_blog_update_post', {post: post.id}) %}
+    {% endif %}
+
+    <form action="{{ form_action }}" role="form">
 
         <div class="form-group">
-            {{ form_label(form.title) }}
-            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control input-lg', 'placeholder': 'Enter a post title…'}}) }}
         </div>
         
         <div class="form-group">
-            {{ form_label(form.slug) }}
-            {{ form_widget(form.slug, {'attr': {'class': 'form-control'}}) }}
-        </div>
-        
-        <div class="form-group">
-            {{ form_label(form.rawContent) }}
-            {{ form_widget(form.rawContent, {'attr': {'class': 'form-control'}}) }}
+            <a href="#" class="btn btn-default btn-sm -np_fullscreen">{{ font_icon('expand') }}</a>
+            {{ form_widget(form.rawContent, {'attr': {'class': 'form-control', 'placeholder': 'Click here to begin typing…'}}) }}
         </div>
         
         <div class="form-group">
@@ -33,9 +28,26 @@
             {{ form_widget(form.tags, {'attr': {'class': 'form-control'}}) }}
         </div>
         
-        {{ form_rest(form) }}
+        <div class="form-group">
+            {{ form_label(form.slug) }}
+            {{ form_widget(form.slug, {'attr': {'class': 'form-control'}}) }}
+        </div>
         
-        <a href="{{ path('admin_blog') }}" class="btn btn-default">Cancel</a>
-        <input type="submit" name="Save" class="btn btn-primary" />
+        {% if draft  %}
+        
+        {% else %}
+            <h3>Published <small>Published on foo</small></h3>
+        {% endif %}
+        
+        <div class="np_form_actions">
+            <a href="#" class="btn btn-default">{{ font_icon('eye') }} Preview</a>
+            <a href="{{ path('admin_blog') }}" class="btn btn-default">Cancel</a>
+            <input type="submit" name="save" class="btn btn-primary" value="Save" />
+            {% if draft  %}
+                <input type="submit" name="publish" class="btn btn-primary" value="Save &amp; Publish" />
+            {% endif %}
+        </div>
+        
+        {{ form_rest(form) }}
     </form>
 {% endblock %}
