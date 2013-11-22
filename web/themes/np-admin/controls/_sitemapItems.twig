@@ -1,0 +1,21 @@
+{% for node in nodes %}
+    <li class="np_sm_item{% if loop.last %} np_sm_item_last{% endif %}">
+        <a href="#" data-node-id="{{ node.attributes.id }}" data-node-type="{{ node.attributes.type.name }}">
+            {{ font_icon(node_icons[node.attributes.type.name], 'fa-fw') }} {{ node.name }}
+            <span class="np_edit_icon">{{ font_icon('gear', 'fa-fw') }}</span>
+        </a>
+        {% if node.hasChildren %}
+            {# recursively include this template #}
+            <ul class="list-unstyled">
+                {{ include('@np-admin/controls/_sitemapItems.twig', {'nodes': node.children}) }}
+            </ul>
+        {% endif %}
+    </li>
+    {% if loop.last %}
+        <li class="np_sm_add">
+            <a href="#" data-node-id="{{ node.attributes.id }}" data-panel-defer class="btn btn-xs btn-primary -np_sm_add">
+                {{ font_icon('plus-circle', 'fa-fw') }} Add Page
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

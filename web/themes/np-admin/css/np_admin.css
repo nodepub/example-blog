@@ -2559,6 +2559,145 @@ body.np_disabled {
   -webkit-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
+/* line 7, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid black;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 0 dotted;
+}
+/* line 22, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown {
+  position: relative;
+}
+/* line 27, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-toggle:focus {
+  outline: 0;
+}
+/* line 32, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+/* line 52, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+/* line 58, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+/* line 63, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857;
+  color: #333333;
+  white-space: nowrap;
+}
+/* line 77, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu > li > a:hover, .np_admin .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: whitesmoke;
+}
+/* line 88, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu > .active > a, .np_admin .dropdown-menu > .active > a:hover, .np_admin .dropdown-menu > .active > a:focus {
+  color: white;
+  text-decoration: none;
+  outline: 0;
+  background-color: #414141;
+}
+/* line 103, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu > .disabled > a, .np_admin .dropdown-menu > .disabled > a:hover, .np_admin .dropdown-menu > .disabled > a:focus {
+  color: #999999;
+}
+/* line 110, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-menu > .disabled > a:hover, .np_admin .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+/* line 122, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .open > .dropdown-menu {
+  display: block;
+}
+/* line 127, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .open > a {
+  outline: 0;
+}
+/* line 133, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: #999999;
+}
+/* line 142, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+/* line 152, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+/* line 165, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropup .caret,
+.np_admin .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0 dotted;
+  border-bottom: 4px solid black;
+  content: "";
+}
+/* line 173, ../sass/vendor/bootstrap/_dropdowns.scss */
+.np_admin .dropup .dropdown-menu,
+.np_admin .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+@media (min-width: 768px) {
+  /* line 187, ../sass/vendor/bootstrap/_dropdowns.scss */
+  .np_admin .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
 /* line 10, ../sass/vendor/bootstrap/_button-groups.scss */
 .btn-default .np_admin .caret {
   border-top-color: #333333;
@@ -3576,6 +3715,142 @@ body.np_disabled {
 .np_admin .panel-info > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #bce8f1;
 }
+/* line 6, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left;
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+}
+/* line 26, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.top {
+  margin-top: -10px;
+}
+/* line 27, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.right {
+  margin-left: 10px;
+}
+/* line 28, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.bottom {
+  margin-top: 10px;
+}
+/* line 29, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.left {
+  margin-left: -10px;
+}
+/* line 32, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+/* line 43, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover-content {
+  padding: 9px 14px;
+}
+/* line 53, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover .arrow, .np_admin .popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+/* line 62, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover .arrow {
+  border-width: 11px;
+}
+/* line 65, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+/* line 71, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+/* line 78, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.top .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: white;
+}
+/* line 86, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+/* line 93, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.right .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: white;
+}
+/* line 101, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+/* line 108, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.bottom .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: white;
+}
+/* line 117, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+/* line 124, ../sass/vendor/bootstrap/_popovers.scss */
+.np_admin .popover.left .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: white;
+  bottom: -10px;
+}
 /* line 21, ../sass/vendor/bootstrap/_mixins.scss */
 .np_admin .clearfix:before, .np_admin .clearfix:after {
   content: " ";
@@ -4332,59 +4607,82 @@ a#np_menu_toggle i {
   transition: all 0.5s;
 }
 
-/* line 3, ../sass/np_admin/_panel.sass */
-#np_panel .panel-default {
+/* line 1, ../sass/np_admin/_panel.sass */
+.np_panel {
   margin-top: 30px;
 }
-/* line 7, ../sass/np_admin/_panel.sass */
-#np_panel .panel-heading, #np_panel .panel-heading h3 {
+/* line 4, ../sass/np_admin/_panel.sass */
+.np_panel .np_panel_heading {
+  border: 4px solid #414141;
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-top-left-radius: 7px;
+  border-top-left-radius: 7px;
+  -moz-border-radius-topright: 7px;
+  -webkit-border-top-right-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #414141;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+/* line 11, ../sass/np_admin/_panel.sass */
+.np_panel .np_panel_heading, .np_panel .np_panel_heading h3 {
   color: white;
   position: relative;
 }
-/* line 13, ../sass/np_admin/_panel.sass */
-#np_panel .panel-title i.fa {
+/* line 17, ../sass/np_admin/_panel.sass */
+.np_panel .panel-title i.fa {
   padding: 0 10px;
 }
-/* line 15, ../sass/np_admin/_panel.sass */
-#np_panel .panel-title a:hover {
+/* line 19, ../sass/np_admin/_panel.sass */
+.np_panel .panel-title a:hover {
   color: #66ff66;
 }
-/* line 18, ../sass/np_admin/_panel.sass */
-#np_panel .panel-body {
-  margin-top: 15px;
+/* line 22, ../sass/np_admin/_panel.sass */
+.np_panel .np_panel_body {
+  border: 4px solid #414141;
+  border-top: none;
+  background-color: #eeeff3;
+  -moz-border-radius-bottomleft: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomright: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   min-height: 200px;
 }
-/* line 22, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_actions {
+/* line 31, ../sass/np_admin/_panel.sass */
+.np_panel .np_panel_actions {
   width: 100%;
   margin-bottom: 20px;
 }
 /* line 16, ../sass/np_admin/_mixins.sass */
-#np_panel .np_panel_actions:before, #np_panel .np_panel_actions:after {
+.np_panel .np_panel_actions:before, .np_panel .np_panel_actions:after {
   content: " ";
   display: table;
 }
 /* line 20, ../sass/np_admin/_mixins.sass */
-#np_panel .np_panel_actions:after {
+.np_panel .np_panel_actions:after {
   clear: both;
 }
-/* line 26, ../sass/np_admin/_panel.sass */
-#np_panel .np_panel_actions .btn-group {
+/* line 35, ../sass/np_admin/_panel.sass */
+.np_panel .np_panel_actions .btn-group {
   float: right;
 }
-/* line 29, ../sass/np_admin/_panel.sass */
-#np_panel .np_form_actions {
+/* line 38, ../sass/np_admin/_panel.sass */
+.np_panel .np_form_actions {
   float: right;
 }
-/* line 32, ../sass/np_admin/_panel.sass */
-#np_panel a.np_close_panel {
+/* line 41, ../sass/np_admin/_panel.sass */
+.np_panel a.np_close_panel {
   color: white;
   position: absolute;
   right: 6px;
-  top: 6px;
+  top: 3px;
 }
-/* line 37, ../sass/np_admin/_panel.sass */
-#np_panel a.np_close_panel:hover {
+/* line 46, ../sass/np_admin/_panel.sass */
+.np_panel a.np_close_panel:hover {
   color: #66ff66;
   text-decoration: none;
   -webkit-transition: all 0.5s;
@@ -4392,22 +4690,23 @@ a#np_menu_toggle i {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 41, ../sass/np_admin/_panel.sass */
-#np_panel a.np_close_panel i.fa {
+/* line 50, ../sass/np_admin/_panel.sass */
+.np_panel a.np_close_panel i.fa {
   font-size: 1.5em;
 }
-/* line 44, ../sass/np_admin/_panel.sass */
-#np_panel .np_icons a {
+/* line 53, ../sass/np_admin/_panel.sass */
+.np_panel .np_icons a {
   color: #414141;
   padding-top: 5px;
   padding: 20px;
 }
-/* line 48, ../sass/np_admin/_panel.sass */
-#np_panel .np_icons a:hover {
+/* line 57, ../sass/np_admin/_panel.sass */
+.np_panel .np_icons a:hover {
   color: #414141;
   background-color: #99ff99;
 }
-/* line 52, ../sass/np_admin/_panel.sass */
+
+/* line 62, ../sass/np_admin/_panel.sass */
 #np_panel textarea {
   height: 350px;
 }
@@ -4612,4 +4911,35 @@ a#np_menu_toggle i {
   padding: 4px 10px;
   position: absolute;
   right: 80px;
+}
+
+/* line 1, ../sass/np_admin/_sitemap.sass */
+.np_sm {
+  margin-bottom: 0;
+}
+/* line 4, ../sass/np_admin/_sitemap.sass */
+.np_sm ul {
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+/* line 8, ../sass/np_admin/_sitemap.sass */
+.np_sm_item_last {
+  margin-bottom: 5px;
+}
+
+/* line 11, ../sass/np_admin/_sitemap.sass */
+li.np_sm_item li.np_sm_item {
+  border-left: 1px solid #cccccc;
+}
+
+/* line 14, ../sass/np_admin/_sitemap.sass */
+.np_edit_icon {
+  display: none;
+}
+
+/* line 18, ../sass/np_admin/_sitemap.sass */
+.np_sm_item a:hover .np_edit_icon {
+  display: block;
+  float: right;
 }

@@ -1,6 +1,4 @@
-define(['jquery', 'underscore', 'np/events'], function($, _, events) {
-
-    var spinnerTempate;
+define(['jquery', 'underscore', 'np/events', 'np/templateLoader'], function($, _, events, templateLoader) {
 
     var panel = {
         enabledEvent: 'np.panel.enabled',
@@ -30,6 +28,8 @@ define(['jquery', 'underscore', 'np/events'], function($, _, events) {
             } else if ($this.attr('data-close')) {
                 e.preventDefault();
                 panel.close();
+            } else if ($this.attr('data-panel-defer')) {
+                e.preventDefault();
             } else if ($this.attr('data-ajax_post')) {
                 e.preventDefault();
                 panel.ajaxPost($this.attr('href'));
@@ -117,10 +117,7 @@ define(['jquery', 'underscore', 'np/events'], function($, _, events) {
         },
 
         getSpinnerContent: function() {
-            if (!spinnerTempate) {
-                spinnerTempate = _.template($('#np_panel_loading_temp').html());
-            }
-
+            var spinnerTempate = templateLoader.getTemplate('np_panel_loading_temp');
             return spinnerTempate();
         },
 

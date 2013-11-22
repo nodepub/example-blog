@@ -1,0 +1,13 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        {{ app['np.sites.active_site'].getHostName }} <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        {% for site in app['np.sites'] %}
+            {% if site.hostName != app['np.sites.active_site']['hostName'] %}
+                {# TODO: post link by ajax #}
+                <li><a href="{{ path('admin_sites_switch', {'site': site.hostName}) }}">{{ site.hostName }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

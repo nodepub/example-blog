@@ -2899,6 +2899,158 @@ input[type="button"].btn-block {
   transition: height 0.35s ease;
 }
 
+/* line 7, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid black;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 0 dotted;
+}
+
+/* line 22, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown {
+  position: relative;
+}
+
+/* line 27, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+/* line 32, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+/* line 52, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+/* line 58, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+/* line 63, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857;
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* line 77, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: whitesmoke;
+}
+
+/* line 88, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  color: white;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca;
+}
+
+/* line 103, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  color: #999999;
+}
+
+/* line 110, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+
+/* line 122, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.open > .dropdown-menu {
+  display: block;
+}
+/* line 127, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.open > a {
+  outline: 0;
+}
+
+/* line 133, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: #999999;
+}
+
+/* line 142, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+
+/* line 152, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* line 165, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  border-top: 0 dotted;
+  border-bottom: 4px solid black;
+  content: "";
+}
+/* line 173, ../../sass/vendor/bootstrap/_dropdowns.scss */
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+
+@media (min-width: 768px) {
+  /* line 187, ../../sass/vendor/bootstrap/_dropdowns.scss */
+  .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
 /* line 10, ../../sass/vendor/bootstrap/_button-groups.scss */
 .btn-default .caret {
   border-top-color: #333333;
@@ -3982,6 +4134,149 @@ input[type="button"].btn-block {
 /* line 409, ../../sass/vendor/bootstrap/_mixins.scss */
 .panel-info > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #bce8f1;
+}
+
+/* line 6, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left;
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+}
+/* line 26, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.top {
+  margin-top: -10px;
+}
+/* line 27, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.right {
+  margin-left: 10px;
+}
+/* line 28, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.bottom {
+  margin-top: 10px;
+}
+/* line 29, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.left {
+  margin-left: -10px;
+}
+
+/* line 32, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+
+/* line 43, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover-content {
+  padding: 9px 14px;
+}
+
+/* line 53, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover .arrow, .popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+/* line 62, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover .arrow {
+  border-width: 11px;
+}
+
+/* line 65, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+
+/* line 71, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+/* line 78, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.top .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: white;
+}
+/* line 86, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+/* line 93, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.right .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: white;
+}
+/* line 101, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+/* line 108, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.bottom .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: white;
+}
+/* line 117, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+/* line 124, ../../sass/vendor/bootstrap/_popovers.scss */
+.popover.left .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: white;
+  bottom: -10px;
 }
 
 /* line 21, ../../sass/vendor/bootstrap/_mixins.scss */

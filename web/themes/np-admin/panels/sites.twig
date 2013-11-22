@@ -2,6 +2,12 @@
 
 {% block panel_nav %}Sites{% endblock %}
 
+{% block panel_actions %}
+    <div class="btn-group">
+        <a href="{{ path('admin_sites_new_site') }}" class="btn btn-primary">{{ font_icon('plus-circle') }} Add Site</a>
+    </div>
+{% endblock %}
+
 {% block panel_content %}
     <ul>
         {% for site in sites %}

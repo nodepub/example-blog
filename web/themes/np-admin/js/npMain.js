@@ -7,16 +7,20 @@ requirejs.config({
         'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
+        },
+        'bootstrap' : {
+            deps: ['jquery']
         }
     },
     paths: {
         backbone:   'lib/backbone.min',
         underscore: 'lib/underscore',
-        jquery:     'lib/jquery'
+        jquery:     'lib/jquery',
+        bootstrap:  'lib/bootstrap.min'
     },
     
     // cache busting during development
     urlArgs: "bust=" + (new Date()).getTime()
 });
 
-requirejs(['np/toolbar', 'np/panel']);
+requirejs(['np/toolbar', 'np/panel', 'np/sitemap']);

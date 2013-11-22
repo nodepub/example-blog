@@ -1,27 +1,43 @@
 {% extends '@np-admin/panel_2col.twig' %}
 
+{% block panel_class %}np_sitemap_panel{% endblock %}
+
 {% block panel_nav %}Sitemap{% endblock %}
 
 {% block column_1 %}
-    <ul>
-    {% for node in nodes %}
-        <li><a href="{{ path('admin_edit_node', {id: node.id}) }}">{{ node.title }}</a></li>
-    {% endfor %}
+    {# map node types to fa icons #}
+    {% set node_icons = {
+        'homepage': 'home',
+        'page'    : 'file',
+        'section' : 'folder',
+        'blog'    : 'comment',
+        'gallery' : 'picture-o'
+        }
+    %}
+    
+    <ul class="list-unstyled np_sm">
+        {{ include('@np-admin/controls/_sitemapItems.twig', {'nodes': sitemap.children}) }}
     </ul>
+    
+    <script id="np_node_types_temp" type="text/html">
+        <ul class="nav nav-list">
+        {% for type in node_types %}
+            <li><a href="#">{{ font_icon(node_icons[type.name], 'fa-fw') }}{{ type.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </script>
+
 {% endblock %}
 
 {% block column_2 %}
-    <h3>Node Types</h3>
-    <ul>
-    {% for type in node_types %}
-        <li><a href="#">{{ type.name }}</a></li>
-    {% endfor %}
-    </ul>
-    
+    <div id="np_sitemap_item_config" class="np_hide">{# ajax loaded here #}</div>
+{% endblock %}
+
+{#
     <h3>Extensions</h3>
     <ul>
     {% for extension in extensions %}
         <li><a href="#">{{ extension.name }}</a></li>
     {% endfor %}
     </ul>
-{% endblock %}
+#}

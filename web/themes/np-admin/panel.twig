@@ -1,23 +1,24 @@
-<div id="np_panel" class="row {% block panel_class %}{% endblock %}">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">{% block panel_nav %}{% endblock %}</h3>
-                <a href="#" data-close="panel" class="np_close_panel">{{ font_icon('times-circle') }}</a>
-            </div>
-            <div class="panel-body">
-                {{ include('@np-admin/_flash_messages.twig') }}
-                <div class="np_panel_actions">
-                    {% block panel_actions %}{% endblock %}
-                </div>
-                {% block panel_row %}
-                    {% block panel_content %}
-                        {% if content is defined %}
-                            {{ content }}
-                        {% endif %}
-                    {% endblock %}
-                {% endblock %}
-            </div>
+{% set grid_class = 'col-md-10 col-md-offset-1' %}
+
+<div id="np_panel" class="row np_panel{% block panel_class %}{% endblock %}">
+    <div class="np_panel_heading {{ grid_class }}">
+        <h3 class="panel-title">{% block panel_nav %}{% endblock %}</h3>
+        <a href="#" data-close="panel" class="np_close_panel">{{ font_icon('times-circle') }}</a>
+    </div>
+    
+    <div class="np_panel_body {{ grid_class }}">
+        {{ include('@np-admin/_flash_messages.twig') }}
+        <div class="np_panel_actions">
+            {% block panel_actions %}
+                {# include('@np-admin/controls/_siteSelect.twig') #}
+            {% endblock %}
         </div>
+        {% block panel_row %}
+            {% block panel_content %}
+                {% if content is defined %}
+                    {{ content }}
+                {% endif %}
+            {% endblock %}
+        {% endblock %}
     </div>
 </div>
