@@ -1,21 +1,34 @@
 .np_sm
+  width: 70%
   margin-bottom: 0
   // nested items
   ul
+    display: none
     margin-left: 20px
     padding-bottom: 10px
 
-.np_sm_item_last
+.np_sm_node
+  padding: 3px 0
+
+.np_sm_node_last
   margin-bottom: 5px
 
-li.np_sm_item li.np_sm_item
-  border-left: 1px solid #ccc
+.np_sm_node_no_chilren,
+.np_sm_add
+  padding-left: 25px
 
-.np_edit_icon
+// hide actions until hover
+
+.np_sm_actions
   display: none
 
-.np_sm_item a:hover
-  .np_edit_icon
+.np_sm_node:hover
+  background-color: $panel_hover
+  > .np_sm_actions
     display: block
     float: right
+    margin-right: 5px
 
+.np_sm_node_active
+  background: $np_green
+  color: #fff

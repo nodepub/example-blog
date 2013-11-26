@@ -10,6 +10,7 @@
   h1, h2, h3, h4, h5, h6
     text-transform: none
     color: $ui_main_color
+    @include np_fonts
   h2
     margin-top: 0
   a
@@ -41,35 +42,7 @@
   width: 960px
   margin: 0 auto
   .np_icons
-    padding-top: 20px
-
-.np_admin
-  .np_icons
-    ul
-      list-style: none
-      margin: 0
-    li
-      float: left
-      margin: 0
-    a
-      display: block
-      color: #888
-      padding: 0 25px
-      height: $icon_height
-      +transition
-      &:hover
-        color: #fff
-        text-decoration: none
-        +transition
-      &.active
-        color: $ui_accent_color
-        +transition
-    i
-      display: block
-      text-align: center
-      margin: 0
-      width: auto
-      padding: 0 0 10px 0
+    padding-top: 10px
 
 #np_userbox
   margin-top: 5px

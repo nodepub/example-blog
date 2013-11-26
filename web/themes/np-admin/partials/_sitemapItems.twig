@@ -1,0 +1,36 @@
+{% for node in nodes %}
+    <li class="np_sm_node{% if loop.last %} np_sm_node_last{% endif %}{% if node.hasChildren %} np_sm_node_has_chilren{% else %} np_sm_node_no_chilren{% endif %}"
+        data-node-id="{{ node.attributes.id }}" 
+        data-node-type="{{ node.attributes.type.name }}">
+        
+        {% if node.hasChildren %}
+            <a href="#" class="np_sm_child_toggle -np_toggle"
+                data-toggle-selector="#np_sm_children_{{ node.attributes.id }}"
+                data-panel-defer="true">
+                {{ font_icon('caret-right', 'fa-fw') }}
+            </a>
+        {% endif %}
+        
+        <a href="#" class="-np_sm_node_edit" data-panel-defer="true">
+            {{ font_icon(node_icons[node.attributes.type.name|lower], 'fa-fw') }} {{ node.name }}
+        </a>
+        
+        <div class="np_sm_actions">
+             <a href="{{ path('admin_nodes_configure_node', {'node': node.attributes.id}) }}" class="np_config_icon -np_sm_node_config" data-panel-defer="true">{{ font_icon('gear', 'fa-fw') }}</a>
+        </div>
+        
+        {% if node.hasChildren %}
+            {# recursively include this template #}
+            <ul id="np_sm_children_{{ node.attributes.id }}" class="list-unstyled">
+                {{ include('@np-admin/partials/_sitemapItems.twig', {'nodes': node.children}) }}
+            </ul>
+        {% endif %}
+    </li>
+    {% if loop.last %}
+        <li class="np_sm_add">
+            <a href="#" data-node-id="{{ node.attributes.id }}" data-panel-defer="true" class="btn btn-xs btn-primary -np_sm_add">
+                {{ font_icon('plus-circle', 'fa-fw') }} Add Page
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

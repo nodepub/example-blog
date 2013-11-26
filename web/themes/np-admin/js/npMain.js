@@ -8,9 +8,7 @@ requirejs.config({
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         },
-        'bootstrap' : {
-            deps: ['jquery']
-        }
+        'bootstrap': ['jquery']
     },
     paths: {
         backbone:   'lib/backbone.min',

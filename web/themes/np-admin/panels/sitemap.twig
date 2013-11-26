@@ -16,13 +16,13 @@
     %}
     
     <ul class="list-unstyled np_sm">
-        {{ include('@np-admin/controls/_sitemapItems.twig', {'nodes': sitemap.children}) }}
+        {{ include('@np-admin/partials/_sitemapItems.twig', {'nodes': sitemap.children}) }}
     </ul>
     
     <script id="np_node_types_temp" type="text/html">
-        <ul class="nav nav-list">
+        <ul class="nav nav-list" data-node-id="<%= nodeId %>">
         {% for type in node_types %}
-            <li><a href="#">{{ font_icon(node_icons[type.name], 'fa-fw') }}{{ type.name }}</a></li>
+            <li><a href="#" class="-np_sm_add_type" data-node-type="{{ type.name }}">{{ font_icon(node_icons[type.name|lower], 'fa-fw') }}{{ type.name }}</a></li>
         {% endfor %}
         </ul>
     </script>
@@ -30,7 +30,7 @@
 {% endblock %}
 
 {% block column_2 %}
-    <div id="np_sitemap_item_config" class="np_hide">{# ajax loaded here #}</div>
+    <div id="np_sm_node_config" class="np_hide">{# ajax loaded here #}</div>
 {% endblock %}
 
 {#

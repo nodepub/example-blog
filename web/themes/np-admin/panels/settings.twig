@@ -7,7 +7,7 @@
     <div class="np_icons">
         <ul>
             {% for setting in settings %}
-                <li class="{{ setting.slug }}"><a href="{{ path(setting.route) }}" data-panel="open">{{ font_icon(setting.icon, 'fa-2x') }}{{ setting.name }}</a></li>
+                <li class="{{ setting.slug }}"><a href="{{ path(setting.route) }}" data-panel="open">{{ font_icon(setting.icon, 'fa-2x fa-fw') }}{{ setting.name }}</a></li>
             {% endfor %}
         </ul>
     </div>

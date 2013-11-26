@@ -13,6 +13,7 @@ define(['jquery', 'underscore', 'np/events', 'np/templateLoader'], function($, _
             events.dispatcher.delegate('a[data-panel="open"]', 'click', this.doOpenClick);
             events.dispatcher.on(events.disabledEvent, this.close);
             //this.panelContainer.delegate('a[data-close="panel"]', 'click', this.doCloseClick);
+            this.panelContainer.delegate('.-np_toggle', 'click', this.doToggleClick);
             this.panelContainer.delegate('a', 'click', this.doInnerLinkClick);
         },
 
@@ -42,6 +43,19 @@ define(['jquery', 'underscore', 'np/events', 'np/templateLoader'], function($, _
         doOpenClick: function(e) {
             e.preventDefault();
             panel.open($(this).attr('href'));
+        },
+        
+        doToggleClick: function(e) {
+            e.preventDefault();
+            
+            var selector = $(this).data('toggle-selector');
+            
+            if (selector) {
+                var $toggleContent = $(selector);
+                if ($toggleContent.length) {
+                    $toggleContent.toggle('fast');
+                }
+            }
         },
 
         open: function(url) {

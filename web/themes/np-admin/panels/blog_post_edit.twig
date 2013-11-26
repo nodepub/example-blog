@@ -1,4 +1,5 @@
-{% extends '@np-admin/panel.twig' %}
+{% extends '@np-admin/panels/blog_post_index.twig' %}
+{% form_theme form '@np-admin/form_fields.twig' %}
 
 {% if draft %}
     {% set page_name = 'Edit Draft' %}
@@ -21,21 +22,14 @@
         </div>
         
         <div class="form-group">
-            <a href="#" class="btn btn-default btn-sm -np_fullscreen">{{ font_icon('expand') }}</a>
+            <a href="#" class="btn btn-default btn-xs np_fullscreen -np_fullscreen">{{ font_icon('expand') }}</a>
             {{ form_widget(form.rawContent, {'attr': {'class': 'form-control', 'placeholder': 'Click here to begin typing…'}}) }}
         </div>
         
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group">
-                    {{ form_label(form.tags) }}
-                    {{ form_widget(form.tags, {'attr': {'class': 'form-control'}}) }}
-                </div>
-                
-                <div class="form-group">
-                    {{ form_label(form.slug) }}
-                    {{ form_widget(form.slug, {'attr': {'class': 'form-control'}}) }}
-                </div>
+                {{ form_row(form.tags) }}
+                {{ form_row(form.slug) }}
             </div>
             
             <div class="col-md-6">

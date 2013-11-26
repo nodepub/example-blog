@@ -1,2 +1,48 @@
+.np_icons
+  ul
+    list-style: none
+    height: $icon_height
+    margin: 0
+    padding: 0
+  li
+    display: block
+    float: left
+    margin: 0 10px
+    width: $icon_width
+    height: $icon_height
+    &:first-child
+      margin-left: 0
+  a
+    display: block
+    width: $icon_width
+    height: $icon_height
+    text-align: center
+    font-size: 14px
+    +transition
+    &:hover
+      text-decoration: none
+      +transition
+    &.active
+      +transition
+  i
+    padding-top: 10px
+    width: $icon_width
+    display: block
+    text-align: center
+    margin: 0
 
+#np_toolbar
+  .np_icons a
+    color: #888
+    &:hover
+      color: #fff
+    &.active
+      color: $ui_accent_color
+
+.np_panel
+  .np_icons a
+    color: $ui_main_color
+    &:hover
+      color: $ui_main_color
+      background-color: $ui_accent_color + #333
     

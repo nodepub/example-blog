@@ -7,6 +7,7 @@ define(['jquery', 'underscore'], function($, _) {
             if (typeof compiledTemplates[id] === 'undefined') {
                 var $template = $('#' + id);
                 if ($template.length === 0) {
+                    console.log('template not found');
                     return;
                 }
                 compiledTemplates[id] = _.template($template.html());

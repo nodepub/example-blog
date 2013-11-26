@@ -1,20 +1,22 @@
 <!-- START of NodePub Toolbar -->
 <div id="np_admin" class="np_admin">
-    <div id="np_toolbar_container">
-        <div id="np_toolbar">
-            <div id="np_icons" class="np_icons">
+    <div id="np_toolbar_container" class="container">
+        <div id="np_toolbar" class="row">
+            <div id="np_icons" class="np_icons col-md-8 col-md-offset-1">
                 <ul>
                     {% for item in toolbar %}
-                        <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open">{{ font_icon(item.icon, 'fa-2x') }}{{ item.name }}</a></li>
+                        {% if loop.index <= 5  %}
+                             <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open">{{ font_icon(item.icon, 'fa-2x') }}{{ item.name }}</a></li>
+                        {% endif %}
                     {% endfor %}
-                    {% if toolbar|length > 4 %}
+                    {% if toolbar|length > 5 %}
                         <li class="more">
                             <a href="{{ path('admin_settings') }}" data-panel="open">{{ font_icon('ellipsis-h', 'fa-2x') }}More</a>
                         </li>
                     {% endif %}
                 </ul>
             </div>
-            <div id="np_userbox">
+            <div id="np_userbox" class="col-md-2">
                 <p>{{ username }}</p>
                 <ul id="np_usernav">
                     <li><a href="{{ path('admin_user', {username: username }) }}">Account</a></li>
@@ -24,13 +26,13 @@
         </div>
     </div>
     <div id="np_panel_container" class="container np_hide">{# ajax inserts panels here #}</div>
-    <a id="np_menu_toggle" href="{{ path('admin_dashboard') }}">{{ font_icon('caret-down', 'fa-2x') }}</a>
+    <a id="np_menu_toggle" href="#">{{ font_icon('caret-down', 'fa-2x') }}</a>
 </div>
 
 {# TODO: see old version for how stylesheets and js are imported using a helper, or use theme config to output them #}
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="/themes/np-admin/css/np_admin.css" />
-
+<link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+<link href="/themes/np-admin/css/np_admin.css" rel="stylesheet"/>
 <script data-main="/themes/np-admin/js/npMain" src="/themes/np-admin/js/lib/require.js"></script>
 
 {#######################################

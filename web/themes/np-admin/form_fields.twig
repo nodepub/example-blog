@@ -1,0 +1,23 @@
+{% use 'form_div_layout.html.twig' with widget_attributes as base_widget_attributes %}
+
+{% block widget_attributes %}
+    {% set custom_attr = {'class': 'form-control'} %}
+    {% if attr is defined %}
+        {% if attr['class'] is not defined %}
+            {% set attr = attr|merge(custom_attr) %}
+        {% endif %}
+    {% else %}
+        {% set attr = custom_attr %}
+    {% endif %}
+    {{ block('base_widget_attributes') }}
+{% endblock widget_attributes %}
+
+{% block form_row %}
+{% spaceless %}
+    <div class="form-group">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock form_row %}

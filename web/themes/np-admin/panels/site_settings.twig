@@ -1,0 +1,48 @@
+{% extends '@np-admin/panel.twig' %}
+{% form_theme form '@np-admin/form_fields.twig' %}
+
+{% if siteSettings is defined %}
+    {% set page_name = siteSettings.hostName %}
+    {% set form_action = path('admin_site', {'site': siteSettings.hostName}) %}
+{% else %}
+    {% set page_name = 'New Site' %}
+    {% set form_action = path('admin_sites_post') %}
+{% endif %}
+
+{% block panel_nav %}
+    {{ panel_nav([{'uri': path('admin_sites'), 'name': 'Sites'},{'name': page_name}]) }}
+{% endblock %}
+
+{% block panel_content %}
+    <form method="post" action="{{ form_action }}" role="form">
+        
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_row(form.hostName) }}
+                {{ form_row(form.url) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.tagline) }}
+                {{ form_row(form.description) }}
+            </div>
+            
+            <div class="col-md-6">
+                <p>TODO: site attributes</p>
+                
+                {% if site.attributes is defined  %}
+                    {% for attr in site.attributes %}
+                    {% endfor %}
+                {% endif %}
+                
+                <a href="#" data-panel-defer="true" class="btn btn-xs btn-primary -np_attr_add">
+                    {{ font_icon('plus-circle', 'fa-fw') }} Add Attribute
+                </a>
+            </div>
+        </div>
+
+        <div class="np_form_actions">
+            <a href="{{ path('admin_sites') }}" class="btn btn-default">Cancel</a>
+            <input type="submit" name="save" class="btn btn-primary" value="Save" />
+        </div>
+        {{ form_rest(form) }}
+    </form>
+{% endblock %}
