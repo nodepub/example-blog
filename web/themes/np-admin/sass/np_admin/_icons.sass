@@ -31,13 +31,28 @@
     text-align: center
     margin: 0
 
+  .np_icon_hide
+    display: none
+
+  .np_icons_next,
+  .np_icons_prev
+    width: auto
+    i
+      padding-top: 15px
+
 #np_toolbar
-  .np_icons a
-    color: #888
-    &:hover
-      color: #fff
-    &.active
-      color: $ui_accent_color
+  .np_icons
+    a
+      color: #888
+      &:hover
+        color: #fff
+      &.active
+        color: $ui_accent_color
+    .np_icon_disabled a
+      color: darken(#888, 20%)
+      &:hover
+        color: darken(#888, 20%)
+        cursor: default
 
 .np_panel
   .np_icons a

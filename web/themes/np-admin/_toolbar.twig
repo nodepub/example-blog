@@ -2,16 +2,24 @@
 <div id="np_admin" class="np_admin">
     <div id="np_toolbar_container" class="container">
         <div id="np_toolbar" class="row">
-            <div id="np_icons" class="np_icons col-md-8 col-md-offset-1">
+            <div id="np_icons" class="np_icons col-md-8 col-md-offset-1" data-icon-group-count="{{toolbar|length}}">
                 <ul>
-                    {% for item in toolbar %}
-                        {% if loop.index <= 5  %}
-                             <li class="{{ item.slug }}"><a href="{{ path(item.route) }}" data-panel="open">{{ font_icon(item.icon, 'fa-2x') }}{{ item.name }}</a></li>
-                        {% endif %}
+                    {% if toolbar|length > 1 %}
+                        <li class="np_icons_prev np_icon_disabled">
+                            <a href="#"  class="-np_prev">{{ font_icon('chevron-left', 'fa-2x') }}</a>
+                        </li>
+                    {% endif %}
+                    {% for icon_group in toolbar %}
+                        {% set group_index = loop.index %}
+                        {% for item in icon_group %}
+                            <li class="{{ item.slug }}{% if group_index > 1  %} np_icon_hide{% endif %}" data-icon-group="{{group_index}}">
+                                <a href="{{ path(item.route) }}" data-panel="open">{{ font_icon(item.icon, 'fa-2x fa-fw') }}{{ item.name }}</a>
+                            </li>
+                        {% endfor %}
                     {% endfor %}
-                    {% if toolbar|length > 5 %}
-                        <li class="more">
-                            <a href="{{ path('admin_settings') }}" data-panel="open">{{ font_icon('ellipsis-h', 'fa-2x') }}More</a>
+                    {% if toolbar|length > 1 %}
+                        <li class="np_icons_next">
+                            <a href="#" class="-np_next">{{ font_icon('chevron-right', 'fa-2x') }}</a>
                         </li>
                     {% endif %}
                 </ul>

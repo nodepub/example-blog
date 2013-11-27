@@ -4554,25 +4554,48 @@ body.np_disabled {
   text-align: center;
   margin: 0;
 }
+/* line 34, ../sass/np_admin/_icons.sass */
+.np_icons .np_icon_hide {
+  display: none;
+}
+/* line 37, ../sass/np_admin/_icons.sass */
+.np_icons .np_icons_next,
+.np_icons .np_icons_prev {
+  width: auto;
+}
+/* line 40, ../sass/np_admin/_icons.sass */
+.np_icons .np_icons_next i,
+.np_icons .np_icons_prev i {
+  padding-top: 15px;
+}
 
-/* line 35, ../sass/np_admin/_icons.sass */
+/* line 45, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons a {
   color: #888888;
 }
-/* line 37, ../sass/np_admin/_icons.sass */
+/* line 47, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons a:hover {
   color: white;
 }
-/* line 39, ../sass/np_admin/_icons.sass */
+/* line 49, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons a.active {
   color: #66ff66;
 }
+/* line 51, ../sass/np_admin/_icons.sass */
+#np_toolbar .np_icons .np_icon_disabled a {
+  color: #555555;
+}
+/* line 53, ../sass/np_admin/_icons.sass */
+#np_toolbar .np_icons .np_icon_disabled a:hover {
+  color: #555555;
+  cursor: default;
+}
 
-/* line 43, ../sass/np_admin/_icons.sass */
+/* line 58, ../sass/np_admin/_icons.sass */
 .np_panel .np_icons a {
   color: #414141;
 }
-/* line 45, ../sass/np_admin/_icons.sass */
+/* line 60, ../sass/np_admin/_icons.sass */
 .np_panel .np_icons a:hover {
   color: #414141;
   background-color: #99ff99;

@@ -1,8 +1,15 @@
 define(['jquery', 'np/events'], function($, events) {
 
+    // Constants
     var enabledClass = 'np_enabled',
-        disabledClass = 'np_disabled'
+        disabledClass = 'np_disabled',
+        
+        DISABLED_ICON_CLASS = 'np_icon_disabled',
+        PREV = 'prev',
+        NEXT = 'next'
         ;
+    
+    var activeIconGroup;
 
     var toolbar = {
 
@@ -16,6 +23,11 @@ define(['jquery', 'np/events'], function($, events) {
 
         bindEvents: function() {
             $('#np_menu_toggle').on('click', this.doToggleClick);
+            
+            // icon pagination
+            $('.-np_prev').on('click', this.doIconPaginatePrev);
+            $('.-np_next').on('click', this.doIconPaginateNext);
+            
             events.dispatcher.delegate('a[data-panel="open"]', 'click', this.doToolbarClick);
             events.dispatcher.on('np.panel.disabled', this.clearActive);
         },
@@ -37,21 +49,61 @@ define(['jquery', 'np/events'], function($, events) {
             $('#np_icons a').removeClass('active');
             $(this).addClass('active');
         },
+        
+        doIconPaginatePrev: function(e) {
+            toolbar.paginateIcons(PREV);
+        },
+        
+        doIconPaginateNext: function(e) {
+            toolbar.paginateIcons(NEXT);
+        },
+        
+        getIconPage: function() {
+            return (typeof activeIconGroup !== 'undefined') ? activeIconGroup : 1;
+        },
+        
+        paginateIcons: function(direction) {
+            var page = this.getIconPage(),
+                iconPageCount = $('#np_icons').data('icon-group-count');
+            
+            if (direction === PREV) {
+                page--;
+            } else if (direction === NEXT) {
+                page++;
+            }
+            
+            if (page >= 1 && page <= iconPageCount) {
+                $('#np_icons li').each(function() {
+                    
+                    var $this = $(this),
+                        iconPage = $this.data('icon-group');
+                        
+                    if (iconPage === page) {
+                        $this.show();
+                    } else if (iconPage) {
+                        $this.hide();
+                    }
+                });
+                
+                // store state
+                activeIconGroup = page;
+            }
+            
+            // Sync the prev and next states
+            if (page === 1) {
+                $('.np_icons_prev').addClass(DISABLED_ICON_CLASS);
+                $('.np_icons_next').removeClass(DISABLED_ICON_CLASS);
+            } else if (page > 1) {
+                $('.np_icons_prev').removeClass(DISABLED_ICON_CLASS);
+                if (page === iconPageCount) {
+                    $('.np_icons_next').addClass(DISABLED_ICON_CLASS);
+                }
+            }
+        },
 
         clearActive: function(e) {
             $('#np_icons a').removeClass('active');
         },
-
-        // drag: function() {
-        // },
-
-        // submitReorder: function() {
-        //     $.post({
-        //         url: '/np-admin/toolbar/reorder',
-        //         success: function(data) {
-        //         }
-        //     });
-        // },
 
         enable: function(onCompleteCallback) {
             this.enabled = true;
