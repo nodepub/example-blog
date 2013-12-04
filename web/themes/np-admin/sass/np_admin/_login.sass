@@ -1,13 +1,13 @@
 .np_login
-  @include np_fonts
   background: #999
   form
+    @include np_fonts
     @include border-radius
     background: #666
     border: 2px solid #333
     color: #333
     width: 500px
-    margin: 200px auto 0
+    margin: 175px auto 0
     padding: 0
   header
     background: #333
@@ -20,7 +20,7 @@
     top: 35px
     left: 40px
     font-size: 18px
-  #flash_msg
+  .flash_msg
     background: $ui_accent_color
     position: absolute
     bottom: 0
@@ -30,22 +30,14 @@
     &.err
       background-color: $warning_color
   .form_body
-    padding: 20px 80px 50px
+    padding: 30px 80px 60px
     position: relative
-  label
-    display: block
+
   input[type="text"],
   input[type="password"]
-    @include border-radius(4px)
-    margin-bottom: 20px
+    margin-bottom: 25px
     width: 340px
     border: 1px solid #333
-    padding: 5px 0
+
   input[type="submit"]
-    @include border-radius(4px)
-    background: $ui_accent_color
-    border: 1px solid #333
-    color: #fff
-    padding: 4px 10px
-    position: absolute
-    right: 80px
+    float: right

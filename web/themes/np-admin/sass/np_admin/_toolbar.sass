@@ -17,6 +17,8 @@
     text-decoration: none
     &:hover
       text-decoration: none
+  li
+    margin: 0
 
 .np_enabled #np_admin
   top: 0
@@ -45,19 +47,25 @@
     padding-top: 10px
 
 #np_userbox
-  margin-top: 5px
+  margin-top: 20px
+  font-size: 13px
 
-#np_usernav
-  list-style: none
-  margin: 0
-  li
-    float: left
-  a
-    display: block
-    color: #d6d6d6
-    padding: 0 15px
-    &:hover
-      color: #fff
-  li:first-child a
-    border-right: 1px dotted #fff
-    padding-left: 0
+  .np_username
+    margin: 0
+
+  .np_usernav
+    list-style: none
+    margin: 0
+    padding: 0
+    li
+      margin: 0
+      float: left
+    a
+      display: block
+      color: #d6d6d6
+      padding: 0 10px
+      &:hover
+        color: #fff
+    li:first-child a
+      border-right: 1px dotted #fff
+      padding-left: 0

@@ -24,6 +24,7 @@
       +transition
     &.active
       +transition
+      cursor: default
   i
     padding-top: 10px
     width: $icon_width
@@ -34,11 +35,19 @@
   .np_icon_hide
     display: none
 
-  .np_icons_next,
-  .np_icons_prev
+  li.np_icons_next,
+  li.np_icons_prev
     width: auto
+    margin: 0
     i
       padding-top: 15px
+    a
+      width: auto
+      transition: none
+      &:hover
+        transition: none
+      &.active
+        transition: none
 
 #np_toolbar
   .np_icons

@@ -1,9 +1,8 @@
 define(['jquery', 'np/events'], function($, events) {
 
     // Constants
-    var enabledClass = 'np_enabled',
-        disabledClass = 'np_disabled',
-        
+    var ENABLED_CLASS = 'np_enabled',
+        DISABLED_CLASS = 'np_disabled',
         DISABLED_ICON_CLASS = 'np_icon_disabled',
         PREV = 'prev',
         NEXT = 'next'
@@ -109,8 +108,8 @@ define(['jquery', 'np/events'], function($, events) {
             this.enabled = true;
 
             $('body')
-                .addClass(enabledClass)
-                .removeClass(disabledClass)
+                .addClass(ENABLED_CLASS)
+                .removeClass(DISABLED_CLASS)
                 ;
 
             events.dispatcher.trigger(events.enabledEvent);
@@ -120,8 +119,8 @@ define(['jquery', 'np/events'], function($, events) {
             this.enabled = false;
 
             $('body')
-                .addClass(disabledClass)
-                .removeClass(enabledClass)
+                .addClass(DISABLED_CLASS)
+                .removeClass(ENABLED_CLASS)
                 ;
 
             events.dispatcher.trigger(events.disabledEvent);

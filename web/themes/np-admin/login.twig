@@ -1,29 +1,13 @@
-{% extends '@default/layout.twig' %}
+{% extends '@np-admin/layout.twig' %}
 
 {% block title %}NodePub Login{% endblock %}
-{% block body_class %}np_login{% endblock %}
-{% block styles %}<link href="/themes/np-admin/css/np_main.css" rel="stylesheet" />{% endblock %}
+{% block body_class %}np_admin np_login{% endblock %}
+
+{% block styles %}
+    <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+    <link href="/themes/np-admin/css/np_admin.css" rel="stylesheet" />
+{% endblock %}
 
 {% block body %}
-    <form action="{{ path('admin_authenticate') }}" method="post">
-        <header>
-            <h1>NodePub</h1>
-            <div id="flash_msg" class="{{ flash_level }}">
-                {% if flash_level == 'err' %}
-                    {{ error }}
-                {% else %}
-                    Please login below.
-                {% endif %}
-            </div>
-        </header>
-        <div class="form_body">
-            <label for="username">Username</label>
-            <input type="text" name="_username" id="username" value="{{ last_username }}" />
-            <br/>
-            <label for="password">Password</label>
-            <input type="password" name="_password" id="password" value="" />
-            <br/>
-            <input type="submit" value="Login" />
-        </div>
-    </form>
+    {% include '@np-admin/partials/_login_form.twig' %}
 {% endblock %}

@@ -4427,8 +4427,12 @@ body.np_disabled {
 .np_admin a:hover {
   text-decoration: none;
 }
+/* line 20, ../sass/np_admin/_toolbar.sass */
+.np_admin li {
+  margin: 0;
+}
 
-/* line 21, ../sass/np_admin/_toolbar.sass */
+/* line 23, ../sass/np_admin/_toolbar.sass */
 .np_enabled #np_admin {
   top: 0;
   -webkit-transition: all 0.5s;
@@ -4437,7 +4441,7 @@ body.np_disabled {
   transition: all 0.5s;
 }
 
-/* line 25, ../sass/np_admin/_toolbar.sass */
+/* line 27, ../sass/np_admin/_toolbar.sass */
 .np_disabled #np_admin {
   top: -76px;
   -webkit-transition: all 0.5s;
@@ -4446,7 +4450,7 @@ body.np_disabled {
   transition: all 0.5s;
 }
 
-/* line 29, ../sass/np_admin/_toolbar.sass */
+/* line 31, ../sass/np_admin/_toolbar.sass */
 #np_toolbar_container {
   height: 75px;
   width: 100%;
@@ -4458,44 +4462,50 @@ body.np_disabled {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#303030',GradientType=0 );
 }
 
-/* line 39, ../sass/np_admin/_toolbar.sass */
+/* line 41, ../sass/np_admin/_toolbar.sass */
 #np_toolbar {
   color: #d6d6d6;
   height: 75px;
   width: 960px;
   margin: 0 auto;
 }
-/* line 44, ../sass/np_admin/_toolbar.sass */
+/* line 46, ../sass/np_admin/_toolbar.sass */
 #np_toolbar .np_icons {
   padding-top: 10px;
 }
 
-/* line 47, ../sass/np_admin/_toolbar.sass */
+/* line 49, ../sass/np_admin/_toolbar.sass */
 #np_userbox {
-  margin-top: 5px;
-}
-
-/* line 50, ../sass/np_admin/_toolbar.sass */
-#np_usernav {
-  list-style: none;
-  margin: 0;
+  margin-top: 20px;
+  font-size: 13px;
 }
 /* line 53, ../sass/np_admin/_toolbar.sass */
-#np_usernav li {
+#np_userbox .np_username {
+  margin: 0;
+}
+/* line 56, ../sass/np_admin/_toolbar.sass */
+#np_userbox .np_usernav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 60, ../sass/np_admin/_toolbar.sass */
+#np_userbox .np_usernav li {
+  margin: 0;
   float: left;
 }
-/* line 55, ../sass/np_admin/_toolbar.sass */
-#np_usernav a {
+/* line 63, ../sass/np_admin/_toolbar.sass */
+#np_userbox .np_usernav a {
   display: block;
   color: #d6d6d6;
-  padding: 0 15px;
+  padding: 0 10px;
 }
-/* line 59, ../sass/np_admin/_toolbar.sass */
-#np_usernav a:hover {
+/* line 67, ../sass/np_admin/_toolbar.sass */
+#np_userbox .np_usernav a:hover {
   color: white;
 }
-/* line 61, ../sass/np_admin/_toolbar.sass */
-#np_usernav li:first-child a {
+/* line 69, ../sass/np_admin/_toolbar.sass */
+#np_userbox .np_usernav li:first-child a {
   border-right: 1px dotted white;
   padding-left: 0;
 }
@@ -4545,8 +4555,9 @@ body.np_disabled {
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: default;
 }
-/* line 27, ../sass/np_admin/_icons.sass */
+/* line 28, ../sass/np_admin/_icons.sass */
 .np_icons i {
   padding-top: 10px;
   width: 60px;
@@ -4554,48 +4565,65 @@ body.np_disabled {
   text-align: center;
   margin: 0;
 }
-/* line 34, ../sass/np_admin/_icons.sass */
+/* line 35, ../sass/np_admin/_icons.sass */
 .np_icons .np_icon_hide {
   display: none;
 }
-/* line 37, ../sass/np_admin/_icons.sass */
-.np_icons .np_icons_next,
-.np_icons .np_icons_prev {
+/* line 38, ../sass/np_admin/_icons.sass */
+.np_icons li.np_icons_next,
+.np_icons li.np_icons_prev {
   width: auto;
+  margin: 0;
 }
-/* line 40, ../sass/np_admin/_icons.sass */
-.np_icons .np_icons_next i,
-.np_icons .np_icons_prev i {
+/* line 42, ../sass/np_admin/_icons.sass */
+.np_icons li.np_icons_next i,
+.np_icons li.np_icons_prev i {
   padding-top: 15px;
 }
+/* line 44, ../sass/np_admin/_icons.sass */
+.np_icons li.np_icons_next a,
+.np_icons li.np_icons_prev a {
+  width: auto;
+  transition: none;
+}
+/* line 47, ../sass/np_admin/_icons.sass */
+.np_icons li.np_icons_next a:hover,
+.np_icons li.np_icons_prev a:hover {
+  transition: none;
+}
+/* line 49, ../sass/np_admin/_icons.sass */
+.np_icons li.np_icons_next a.active,
+.np_icons li.np_icons_prev a.active {
+  transition: none;
+}
 
-/* line 45, ../sass/np_admin/_icons.sass */
+/* line 54, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons a {
   color: #888888;
 }
-/* line 47, ../sass/np_admin/_icons.sass */
+/* line 56, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons a:hover {
   color: white;
 }
-/* line 49, ../sass/np_admin/_icons.sass */
+/* line 58, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons a.active {
   color: #66ff66;
 }
-/* line 51, ../sass/np_admin/_icons.sass */
+/* line 60, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons .np_icon_disabled a {
   color: #555555;
 }
-/* line 53, ../sass/np_admin/_icons.sass */
+/* line 62, ../sass/np_admin/_icons.sass */
 #np_toolbar .np_icons .np_icon_disabled a:hover {
   color: #555555;
   cursor: default;
 }
 
-/* line 58, ../sass/np_admin/_icons.sass */
+/* line 67, ../sass/np_admin/_icons.sass */
 .np_panel .np_icons a {
   color: #414141;
 }
-/* line 60, ../sass/np_admin/_icons.sass */
+/* line 69, ../sass/np_admin/_icons.sass */
 .np_panel .np_icons a:hover {
   color: #414141;
   background-color: #99ff99;
@@ -4870,11 +4898,11 @@ a#np_menu_toggle i {
 
 /* line 1, ../sass/np_admin/_login.sass */
 .np_login {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
   background: #999999;
 }
-/* line 4, ../sass/np_admin/_login.sass */
+/* line 3, ../sass/np_admin/_login.sass */
 .np_login form {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -4884,7 +4912,7 @@ a#np_menu_toggle i {
   border: 2px solid #333333;
   color: #333333;
   width: 500px;
-  margin: 200px auto 0;
+  margin: 175px auto 0;
   padding: 0;
 }
 /* line 12, ../sass/np_admin/_login.sass */
@@ -4903,7 +4931,7 @@ a#np_menu_toggle i {
   font-size: 18px;
 }
 /* line 23, ../sass/np_admin/_login.sass */
-.np_login #flash_msg {
+.np_login .flash_msg {
   background: #66ff66;
   position: absolute;
   bottom: 0;
@@ -4912,44 +4940,24 @@ a#np_menu_toggle i {
   text-indent: 80px;
 }
 /* line 30, ../sass/np_admin/_login.sass */
-.np_login #flash_msg.err {
+.np_login .flash_msg.err {
   background-color: red;
 }
 /* line 32, ../sass/np_admin/_login.sass */
 .np_login .form_body {
-  padding: 20px 80px 50px;
+  padding: 30px 80px 60px;
   position: relative;
 }
-/* line 35, ../sass/np_admin/_login.sass */
-.np_login label {
-  display: block;
-}
-/* line 37, ../sass/np_admin/_login.sass */
+/* line 36, ../sass/np_admin/_login.sass */
 .np_login input[type="text"],
 .np_login input[type="password"] {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   width: 340px;
   border: 1px solid #333333;
-  padding: 5px 0;
 }
-/* line 44, ../sass/np_admin/_login.sass */
+/* line 42, ../sass/np_admin/_login.sass */
 .np_login input[type="submit"] {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  background: #66ff66;
-  border: 1px solid #333333;
-  color: white;
-  padding: 4px 10px;
-  position: absolute;
-  right: 80px;
+  float: right;
 }
 
 /* line 1, ../sass/np_admin/_sitemap.sass */
